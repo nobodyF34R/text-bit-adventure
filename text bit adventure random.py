@@ -333,7 +333,7 @@ if read_byte(0) == 1:
         if read_byte(1) > 0:
             #1 in 3 chance it heals
             #hard code max health
-            if next((int(0+3*(abs(hash(str(hash(str(hash(str(storage.count(1))))+str(i+1))))) % 10**13)/ 10**13) for i in range(2**6))) == 0 and read_byte(1) != 5 and read_bit(57) == 0:
+            if next((int(0+4*(abs(hash(str(hash(str(hash(str(read_byte(0)+read_byte(1)+read_byte(2)+read_byte(3)+read_byte(4)+read_byte(5)+read_byte(6)+read_byte(7))))+str(i+1))))) % 10**13)/ 10**13) for i in range(2**6))) == 0 and read_byte(1) != 5 and read_bit(57) == 0:
                 write_bit(57, 1)
                 print("enemy heals!")
                 if 2 + read_byte(1) > 5:
@@ -477,7 +477,7 @@ if read_byte(0) == 2 and read_bit(62) == 0:
         if read_byte(1) > 0:
             #1 in 5 chance it heals
             #hard code max health
-            if next((int(0+3*(abs(hash(str(hash(str(hash(str(storage.count(1))))+str(i+1))))) % 10**13)/ 10**13) for i in range(2**6))) == 0 and read_byte(1) != 4 and read_bit(57) == 0:
+            if next((int(0+4*(abs(hash(str(hash(str(hash(str(read_byte(0)+read_byte(1)+read_byte(2)+read_byte(3)+read_byte(4)+read_byte(5)+read_byte(6)+read_byte(7))))+str(i+1))))) % 10**13)/ 10**13) for i in range(2**6))) == 0 and read_byte(1) != 4 and read_bit(57) == 0:
                 write_bit(57, 1)
                 print("enemy heals!")
                 if 2 + read_byte(1) > 4:
@@ -621,7 +621,7 @@ if read_byte(0) == 3 and read_bit(62) == 0:
         if read_byte(1) > 0:
             #1 in 5 chance it heals
             #hard code max health
-            if next((int(0+3*(abs(hash(str(hash(str(hash(str(storage.count(1))))+str(i+1))))) % 10**13)/ 10**13) for i in range(2**6))) == 0 and read_byte(1) != 10 and read_bit(57) == 0:
+            if next((int(0+4*(abs(hash(str(hash(str(hash(str(read_byte(0)+read_byte(1)+read_byte(2)+read_byte(3)+read_byte(4)+read_byte(5)+read_byte(6)+read_byte(7))))+str(i+1))))) % 10**13)/ 10**13) for i in range(2**6))) == 0 and read_byte(1) != 10 and read_bit(57) == 0:
                 write_bit(57, 1)
                 print("enemy heals!")
                 if 2 + read_byte(1) > 10:
@@ -787,7 +787,7 @@ if read_byte(0) == 5 and read_bit(62) == 0:
         if read_byte(1) > 0:
             #1 in 5 chance it heals
             #hard code max health
-            if next((int(0+3*(abs(hash(str(hash(str(hash(str(storage.count(1))))+str(i+1))))) % 10**13)/ 10**13) for i in range(2**6))) == 0 and read_byte(1) != 20 and read_bit(57) == 0:
+            if next((int(0+4*(abs(hash(str(hash(str(hash(str(read_byte(0)+read_byte(1)+read_byte(2)+read_byte(3)+read_byte(4)+read_byte(5)+read_byte(6)+read_byte(7))))+str(i+1))))) % 10**13)/ 10**13) for i in range(2**6))) == 0 and read_byte(1) != 20 and read_bit(57) == 0:
                 write_bit(57, 1)
                 print("enemy heals!")
                 if 2 + read_byte(1) > 20:
@@ -814,7 +814,10 @@ if read_byte(0) == 5 and read_bit(62) == 0:
                         write_byte(read_byte(3)-read_byte(0), 3)
             print(f"you have {read_byte(3)} health remaining!\n")
             if read_byte(3) < 1:
-                print("you die!")
+                if read_byte(2) == 255 and read_byte(4) == 255 and read_byte(5) == 255:
+                    print("SECRET ENDING \n\noh! why hello there! \nit's me; \nthe creator of this game! \ni just wanted to personally congratulate you on getting this ending. \neven after getting god-like powers, you still layed down your sword and let the world return to its balance. \nyou are amazing and have shown so much dedication and pacience to this game and i commend you for that! \nwhatever it is, you can achieve your dreams! \ndon't let anything stop you! \nanyways it's my time to go now. \nwith all that said, \ngoodbye player!")
+                else:
+                    print("you die!")
                 write_bit(62, 1)
                 break
                     
