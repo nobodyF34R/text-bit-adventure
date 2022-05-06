@@ -313,7 +313,7 @@ if read_byte(0) == 1:
             if read_byte(5) == 1:
                 print(f"You have {read_byte(5)} potion left!")
             else:
-                print(f"You have {read_byte(5)} potions left.")
+                print(f"You have {read_byte(5)} potions left!")
             write_bit(63, 0)
             write_bit(60, 0)
             write_bit(59, 0)
@@ -451,7 +451,7 @@ if read_byte(0) == 2 and read_bit(62) == 0:
             if read_byte(5) == 1:
                 print(f"You have {read_byte(5)} potion left!")
             else:
-                print(f"You have {read_byte(5)} potions left.")
+                print(f"You have {read_byte(5)} potions left!")
             write_bit(63, 0)
             write_bit(60, 0)
             write_bit(59, 0)
@@ -589,7 +589,7 @@ if read_byte(0) == 3 and read_bit(62) == 0:
             if read_byte(5) == 1:
                 print(f"You have {read_byte(5)} potion left!")
             else:
-                print(f"You have {read_byte(5)} potions left.")
+                print(f"You have {read_byte(5)} potions left!")
             write_bit(63, 0)
             write_bit(60, 0)
             write_bit(59, 0)
@@ -752,7 +752,7 @@ if read_byte(0) == 5 and read_bit(62) == 0:
             if read_byte(5) == 1:
                 print(f"You have {read_byte(5)} potion left!")
             else:
-                print(f"You have {read_byte(5)} potions left.")
+                print(f"You have {read_byte(5)} potions left!")
             if read_bit(61) == 1 and (read_byte(5) == 69 or read_byte(5) == 169):
                 print("\nNice.\n")
             write_bit(63, 0)
@@ -801,11 +801,11 @@ if read_byte(0) == 5 and read_bit(62) == 0:
                 print("Nice.\n")
             if read_byte(3) < 1:
                 if read_byte(2) == 255 and read_byte(4) == 255:
-                    print("SECRET ENDING \n\nOh! why hello there! \nit's me, \nthe creator of this game! \nI just wanted to personally congratulate you on getting this ending. \nEven after getting god-like powers, you still layed down your sword and let the world return to its balance. \nYou are amazing and have shown so much dedication and pacience to this game and i commend You for that! \nNo matter what they are, you can achieve your dreams! \nDon't let anything stop you! \nAnyways it's my time to go now. \nWith all that said, \ngoodbye player!")
+                    print("SECRET ENDING \n\nOh! why hello there! \nit's me, \nthe creator of this game! \nI just wanted to personally congratulate you on getting this ending. \nEven after getting god-like powers, you still layed down your sword and let the world return to its balance. \nYou are amazing and have shown so much dedication and patience to this game and i commend you for that! \nNo matter what they are, you can achieve your dreams! \nDon't let anything stop you! \nAnyways it's my time to go now. \nWith all that said, \ngoodbye player!")
                 else:
                     print("You die!")
                 if read_byte(2) == 255 and read_byte(4) == 255 and read_byte(5) == 0:
-                    print("https://bit.ly/382Jahf")
+                    print("\nhttps://bit.ly/382Jahf")
                 write_bit(62, 1)
                 break
                     
@@ -816,7 +816,7 @@ if read_byte(0) == 5 and read_bit(62) == 0:
             print("Great, now try beat it without cheats!\n")
         else:
             print("The huge evil duck was defeated and peace was restored to the land!\n")
-if read_bit(61) == 1 and (read_byte(5) == 69 or read_byte(3) == 69) and (read_byte(5) == 169 or read_byte(3) == 169):
-    print("https://bit.ly/3wcgAlt")
+if read_bit(61) == 1 and (read_byte(5) == 169 or read_byte(3) == 69) and (read_byte(5) == 169 or read_byte(3) == 69):
+    print("https://bit.ly/3wcgAlt\n")
 print("\nEND.\n")
 pass
