@@ -76,6 +76,7 @@ print("\x1B[2J")
 
 print("\nHint, if you want to beat the game, only upgrade your strength by 1 and don't use any cheat codes!\n")
 print("Hint, you can perform any action with just its first letter!\n")
+
 if (input("Do you have a secret code? \n: ")+" ")[0] == "y":
     write_bit(63, 1)
     write_bit(61, True)
@@ -817,5 +818,5 @@ if read_byte(0) == 5 and read_bit(62) == 0:
         else:
             print("The huge evil duck was defeated and peace was restored to the land!\n")
 
-print("\nEND\n")
+print("\nEND.\n")
 pass
