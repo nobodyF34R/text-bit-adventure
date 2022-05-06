@@ -203,6 +203,8 @@ if read_bit(56) == 1:
 
 #game start
 
+#bit number 61 is free
+
 write_byte(read_byte(5), 0)
 write_bit(62, 0)
 
@@ -271,23 +273,19 @@ if read_byte(0) == 1:
             print("\x1B[2J")
             if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "p":
                 print("No more potions!")
-            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a" and read_bit(60) == 1 and read_bit(59) == 1 and read_bit(58) == 1):
+            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a" and read_bit(60) == 1 and read_bit(59) == 1):
                 print("Too exausted.")
-                write_bit(58, 0)
-            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "s" or read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "l") and read_bit(61) == 1:
+            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "s" or read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "l"):
                 print(f"Player stats: \npotion amount: {read_byte(5)} \ncurrent health: {read_byte(3)} \nmax health: {read_byte(4)} \nstrength: {read_byte(2)} \n\nenemy stats: \nhealth: {read_byte(1)} \nstrength: {read_byte(0)} \n")
-                write_bit(61, 0)
             else:
                 print("Invalid action.")
+            if read_bit(60) == 1 and read_bit(59) == 1:
+                write_bit(58, 0)
             
-            if read_bit(61) == 0 and read_bit(58) == 1:
-                write_byte(int(bin(int.from_bytes((input("Do you attack, potion or defend? \n: ")+" ")[0].encode(), 'big')), 2), 6)
-            elif read_bit(61) == 1 and read_bit(58) == 1:
+            if read_bit(58) == 1:
                 write_byte(int(bin(int.from_bytes((input("Do you attack, potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
-            elif read_bit(61) == 1 and read_bit(58) == 0:
-                write_byte(int(bin(int.from_bytes((input("Do you potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
             else:
-                write_byte(int(bin(int.from_bytes((input("Do you potion or defend? \n: ")+" ")[0].encode(), 'big')), 2), 6)
+                write_byte(int(bin(int.from_bytes((input("Do you potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
         print("\x1B[2J")
         
         if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a":
@@ -415,23 +413,19 @@ if read_byte(0) == 2 and read_bit(62) == 0:
             print("\x1B[2J")
             if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "p":
                 print("No more potions!")
-            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a" and read_bit(60) == 1 and read_bit(59) == 1 and read_bit(58) == 1):
+            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a" and read_bit(60) == 1 and read_bit(59) == 1):
                 print("Too exausted.")
-                write_bit(58, 0)
-            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "s" or read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "l") and read_bit(61) == 1:
+            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "s" or read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "l"):
                 print(f"Player stats: \npotion amount: {read_byte(5)} \ncurrent health: {read_byte(3)} \nmax health: {read_byte(4)} \nstrength: {read_byte(2)} \n\nenemy stats: \nhealth: {read_byte(1)} \nstrength: {read_byte(0)} \n")
-                write_bit(61, 0)
             else:
                 print("Invalid action.")
+            if read_bit(60) == 1 and read_bit(59) == 1:
+                write_bit(58, 0)
             
-            if read_bit(61) == 0 and read_bit(58) == 1:
-                write_byte(int(bin(int.from_bytes((input("Do you attack, potion or defend? \n: ")+" ")[0].encode(), 'big')), 2), 6)
-            elif read_bit(61) == 1 and read_bit(58) == 1:
+            if read_bit(58) == 1:
                 write_byte(int(bin(int.from_bytes((input("Do you attack, potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
-            elif read_bit(61) == 1 and read_bit(58) == 0:
-                write_byte(int(bin(int.from_bytes((input("Do you potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
             else:
-                write_byte(int(bin(int.from_bytes((input("Do you potion or defend? \n: ")+" ")[0].encode(), 'big')), 2), 6)
+                write_byte(int(bin(int.from_bytes((input("Do you potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
         print("\x1B[2J")
         
         if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a":
@@ -559,23 +553,19 @@ if read_byte(0) == 3 and read_bit(62) == 0:
             print("\x1B[2J")
             if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "p":
                 print("No more potions!")
-            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a" and read_bit(60) == 1 and read_bit(59) == 1 and read_bit(58) == 1):
+            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a" and read_bit(60) == 1 and read_bit(59) == 1):
                 print("Too exausted.")
-                write_bit(58, 0)
-            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "s" or read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "l") and read_bit(61) == 1:
+            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "s" or read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "l"):
                 print(f"Player stats: \npotion amount: {read_byte(5)} \ncurrent health: {read_byte(3)} \nmax health: {read_byte(4)} \nstrength: {read_byte(2)} \n\nenemy stats: \nhealth: {read_byte(1)} \nstrength: {read_byte(0)} \n")
-                write_bit(61, 0)
             else:
                 print("Invalid action.")
+            if read_bit(60) == 1 and read_bit(59) == 1:
+                write_bit(58, 0)
             
-            if read_bit(61) == 0 and read_bit(58) == 1:
-                write_byte(int(bin(int.from_bytes((input("Do you attack, potion or defend? \n: ")+" ")[0].encode(), 'big')), 2), 6)
-            elif read_bit(61) == 1 and read_bit(58) == 1:
+            if read_bit(58) == 1:
                 write_byte(int(bin(int.from_bytes((input("Do you attack, potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
-            elif read_bit(61) == 1 and read_bit(58) == 0:
-                write_byte(int(bin(int.from_bytes((input("Do you potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
             else:
-                write_byte(int(bin(int.from_bytes((input("Do you potion or defend? \n: ")+" ")[0].encode(), 'big')), 2), 6)
+                write_byte(int(bin(int.from_bytes((input("Do you potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
         print("\x1B[2J")
         
         if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a":
@@ -725,23 +715,19 @@ if read_byte(0) == 5 and read_bit(62) == 0:
             print("\x1B[2J")
             if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "p":
                 print("No more potions!")
-            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a" and read_bit(60) == 1 and read_bit(59) == 1 and read_bit(58) == 1):
+            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a" and read_bit(60) == 1 and read_bit(59) == 1):
                 print("Too exausted.")
-                write_bit(58, 0)
-            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "s" or read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "l") and read_bit(61) == 1:
+            elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "s" or read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "l"):
                 print(f"Player stats: \npotion amount: {read_byte(5)} \ncurrent health: {read_byte(3)} \nmax health: {read_byte(4)} \nstrength: {read_byte(2)} \n\nenemy stats: \nhealth: {read_byte(1)} \nstrength: {read_byte(0)} \n")
-                write_bit(61, 0)
             else:
                 print("Invalid action.")
+            if read_bit(60) == 1 and read_bit(59) == 1:
+                write_bit(58, 0)
             
-            if read_bit(61) == 0 and read_bit(58) == 1:
-                write_byte(int(bin(int.from_bytes((input("Do you attack, potion or defend? \n: ")+" ")[0].encode(), 'big')), 2), 6)
-            elif read_bit(61) == 1 and read_bit(58) == 1:
+            if read_bit(58) == 1:
                 write_byte(int(bin(int.from_bytes((input("Do you attack, potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
-            elif read_bit(61) == 1 and read_bit(58) == 0:
-                write_byte(int(bin(int.from_bytes((input("Do you potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
             else:
-                write_byte(int(bin(int.from_bytes((input("Do you potion or defend? \n: ")+" ")[0].encode(), 'big')), 2), 6)
+                write_byte(int(bin(int.from_bytes((input("Do you potion, defend or look at stats? \n: ")+" ")[0].encode(), 'big')), 2), 6)
         print("\x1B[2J")
         
         if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a":
