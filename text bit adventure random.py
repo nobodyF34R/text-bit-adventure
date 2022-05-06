@@ -74,8 +74,8 @@ def read_bit(location):
 
 print("\x1B[2J")
 
-print("\nhint, if you want to beat the game, only upgrade your strength by 1 and don't use any cheat codes!\n")
-
+print("\nHint, if you want to beat the game, only upgrade your strength by 1 and don't use any cheat codes!\n")
+print("Hint, you can perform any action with just its first letter!\n")
 if (input("Do you have a secret code? \n: ")+" ")[0] == "y":
     write_bit(63, 1)
     write_bit(61, True)
@@ -804,6 +804,8 @@ if read_byte(0) == 5 and read_bit(62) == 0:
                     print("SECRET ENDING \n\nOh! why hello there! \nit's me, \nthe creator of this game! \nI just wanted to personally congratulate you on getting this ending. \nEven after getting god-like powers, you still layed down your sword and let the world return to its balance. \nYou are amazing and have shown so much dedication and pacience to this game and i commend You for that! \nNo matter what they are, you can achieve your dreams! \nDon't let anything stop you! \nAnyways it's my time to go now. \nWith all that said, \ngoodbye player!")
                 else:
                     print("You die!")
+                if read_byte(2) == 255 and read_byte(4) == 255 and read_byte(5) == 0:
+                    print("https://bit.ly/3w4IOi1")
                 write_bit(62, 1)
                 break
                     
@@ -811,7 +813,7 @@ if read_byte(0) == 5 and read_bit(62) == 0:
     if read_bit(62) == 0:
         print("\x1B[2J")
         if read_bit(56) == 1:
-            print("great, now try beat it without cheats!\n")
+            print("Great, now try beat it without cheats!\n")
         else:
             print("The huge evil duck was defeated and peace was restored to the land!\n")
 
