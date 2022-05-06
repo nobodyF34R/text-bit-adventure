@@ -208,7 +208,7 @@ if read_bit(56) == 1:
 
 write_byte(read_byte(5), 0)
 write_bit(62, 0)
-
+write_bit(61, 0)
 
 #can be changed
 write_byte(5, 4)
@@ -237,11 +237,11 @@ if read_byte(0) == 253:
 if read_byte(0) == 251:
     #konami
     write_bit(56,0)
-    print("Gamer alert!")
     write_byte(5, 0)
     write_byte(255, 4)
     write_byte(255, 2)
     write_byte(255, 5)
+    write_bit(61, 1)
 
 write_byte(read_byte(4), 3)
 
@@ -720,6 +720,8 @@ if read_byte(0) == 5 and read_bit(62) == 0:
                 print("Too exausted.")
             elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "s" or read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "l"):
                 print(f"Player stats: \npotion amount: {read_byte(5)} \ncurrent health: {read_byte(3)} \nmax health: {read_byte(4)} \nstrength: {read_byte(2)} \n\nenemy stats: \nhealth: {read_byte(1)} \nstrength: {read_byte(0)} \n")
+                if read_bit(61) == 1 and (read_byte(5) == 69 or read_byte(3) == 69):
+                    print("Nice.\n")
             else:
                 print("Invalid action.")
             if read_bit(60) == 1 and read_bit(59) == 1:
@@ -757,6 +759,8 @@ if read_byte(0) == 5 and read_bit(62) == 0:
                 print(f"You have {read_byte(5)} potion left!")
             else:
                 print(f"You have {read_byte(5)} potions left.")
+            if read_bit(61) == 1 and (read_byte(5) == 69 or read_byte(3) == 169):
+                print("\nNice.\n")
             write_bit(63, 0)
             write_bit(60, 0)
             write_bit(59, 0)
@@ -800,6 +804,8 @@ if read_byte(0) == 5 and read_bit(62) == 0:
                     else:
                         write_byte(read_byte(3)-read_byte(0), 3)
             print(f"You have {read_byte(3)} health remaining!\n")
+            if read_bit(61) == 1 and (read_byte(3) == 69 or read_byte(3) == 169):
+                print("Nice.\n")
             if read_byte(3) < 1:
                 if read_byte(2) == 255 and read_byte(4) == 255:
                     print("SECRET ENDING \n\nOh! why hello there! \nit's me, \nthe creator of this game! \nI just wanted to personally congratulate you on getting this ending. \nEven after getting god-like powers, you still layed down your sword and let the world return to its balance. \nYou are amazing and have shown so much dedication and pacience to this game and i commend You for that! \nNo matter what they are, you can achieve your dreams! \nDon't let anything stop you! \nAnyways it's my time to go now. \nWith all that said, \ngoodbye player!")
