@@ -237,7 +237,7 @@ if read_byte(0) == 253:
 if read_byte(0) == 251:
     #konami
     write_bit(56,0)
-    print("You are a real gamer.\ntrue ending time!")
+    print("Gamer alert!")
     write_byte(5, 0)
     write_byte(255, 4)
     write_byte(255, 2)
@@ -801,7 +801,7 @@ if read_byte(0) == 5 and read_bit(62) == 0:
                         write_byte(read_byte(3)-read_byte(0), 3)
             print(f"You have {read_byte(3)} health remaining!\n")
             if read_byte(3) < 1:
-                if read_byte(2) == 255 and read_byte(4) == 255 and read_byte(5) == 255:
+                if read_byte(2) == 255 and read_byte(4) == 255:
                     print("SECRET ENDING \n\nOh! why hello there! \nit's me, \nthe creator of this game! \nI just wanted to personally congratulate you on getting this ending. \nEven after getting god-like powers, you still layed down your sword and let the world return to its balance. \nYou are amazing and have shown so much dedication and pacience to this game and i commend You for that! \nNo matter what they are, you can achieve your dreams! \nDon't let anything stop you! \nAnyways it's my time to go now. \nWith all that said, \ngoodbye player!")
                 else:
                     print("You die!")
