@@ -250,7 +250,6 @@ if read_byte(0) == 1:
     input("")
     print("\x1B[2J")
 
-    write_bit(61, 1)
     write_bit(58, 1)
     write_bit(59, 0)
     write_bit(60, 0)
@@ -326,7 +325,6 @@ if read_byte(0) == 1:
             write_bit(59, 0)
 
         print()
-        write_bit(61, 1)
         write_bit(58, 1)
 
         if read_byte(1) > 0:
@@ -390,7 +388,6 @@ if read_byte(0) == 2 and read_bit(62) == 0:
     input("")
     print("\x1B[2J")
 
-    write_bit(61, 1)
     write_bit(58, 1)
     write_bit(59, 0)
     write_bit(60, 0)
@@ -466,7 +463,6 @@ if read_byte(0) == 2 and read_bit(62) == 0:
             write_bit(59, 0)
 
         print()
-        write_bit(61, 1)
         write_bit(58, 1)
 
         if read_byte(1) > 0:
@@ -530,7 +526,6 @@ if read_byte(0) == 3 and read_bit(62) == 0:
     input("")
     print("\x1B[2J")
 
-    write_bit(61, 1)
     write_bit(58, 1)
     write_bit(59, 0)
     write_bit(60, 0)
@@ -606,7 +601,6 @@ if read_byte(0) == 3 and read_bit(62) == 0:
             write_bit(59, 0)
 
         print()
-        write_bit(61, 1)
         write_bit(58, 1)
 
         if read_byte(1) > 0:
@@ -685,14 +679,14 @@ if read_byte(0) == 4 and read_bit(62) == 0:
         print("\x1B[2J")
         write_byte(read_byte(2)+1, 2)
         print("Strength increased by 1!")
+    print()
 
 if read_byte(0) == 5 and read_bit(62) == 0:
-    print("\nBOSS\n")
+    print("BOSS\n")
     print(f"Level {read_byte(0)}! (enter to continue)")
     input("")
     print("\x1B[2J")
 
-    write_bit(61, 1)
     write_bit(58, 1)
     write_bit(59, 0)
     write_bit(60, 0)
@@ -720,7 +714,7 @@ if read_byte(0) == 5 and read_bit(62) == 0:
                 print("Too exausted.")
             elif (read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "s" or read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "l"):
                 print(f"Player stats: \npotion amount: {read_byte(5)} \ncurrent health: {read_byte(3)} \nmax health: {read_byte(4)} \nstrength: {read_byte(2)} \n\nenemy stats: \nhealth: {read_byte(1)} \nstrength: {read_byte(0)} \n")
-                if read_bit(61) == 1 and (read_byte(5) == 69 or read_byte(3) == 69):
+                if read_bit(61) == 1 and (read_byte(5) == 69 or read_byte(3) == 69 or read_byte(5) == 169 or read_byte(3) == 169):
                     print("Nice.\n")
             else:
                 print("Invalid action.")
@@ -759,7 +753,7 @@ if read_byte(0) == 5 and read_bit(62) == 0:
                 print(f"You have {read_byte(5)} potion left!")
             else:
                 print(f"You have {read_byte(5)} potions left.")
-            if read_bit(61) == 1 and (read_byte(5) == 69 or read_byte(3) == 169):
+            if read_bit(61) == 1 and (read_byte(5) == 69 or read_byte(5) == 169):
                 print("\nNice.\n")
             write_bit(63, 0)
             write_bit(60, 0)
@@ -772,7 +766,6 @@ if read_byte(0) == 5 and read_bit(62) == 0:
             write_bit(59, 0)
 
         print()
-        write_bit(61, 1)
         write_bit(58, 1)
 
         if read_byte(1) > 0:
@@ -812,7 +805,7 @@ if read_byte(0) == 5 and read_bit(62) == 0:
                 else:
                     print("You die!")
                 if read_byte(2) == 255 and read_byte(4) == 255 and read_byte(5) == 0:
-                    print("https://bit.ly/3w4IOi1")
+                    print("https://bit.ly/382Jahf")
                 write_bit(62, 1)
                 break
                     
@@ -823,6 +816,7 @@ if read_byte(0) == 5 and read_bit(62) == 0:
             print("Great, now try beat it without cheats!\n")
         else:
             print("The huge evil duck was defeated and peace was restored to the land!\n")
-
+if read_bit(61) == 1 and (read_byte(5) == 69 or read_byte(3) == 69) and (read_byte(5) == 169 or read_byte(3) == 169):
+    print("https://bit.ly/3wcgAlt")
 print("\nEND.\n")
 pass
