@@ -73,6 +73,13 @@ def read_bit(location):
         return 0
 
 def level():
+    #enemy healed?
+    write_bit(57, 0)
+
+    write_bit(58, 1)
+    write_bit(59, 0)
+    write_bit(60, 0)
+
     print(f"Enemy health is {read_byte(1)}.")
 
     while read_byte(1) > 0:
@@ -192,6 +199,11 @@ def poti():
     write_byte(read_byte(4), 3)
     print(f"\nYou found {read_byte(0)} potions!\n")
     write_byte(read_byte(5)+read_byte(0), 5)
+
+def boxinaboxinaboxinaboxina():
+    print(f"Level {read_byte(0)}! (enter to continue)")
+    input("")
+    print("\x1B[2J")
 
 print("\x1B[2J")
 
@@ -367,20 +379,11 @@ if read_byte(0) == 251:
 write_byte(read_byte(4), 3)
 
 if read_byte(0) == 1:
-    print(f"Level {read_byte(0)}! (enter to continue)")
-    input("")
-    print("\x1B[2J")
-
-    write_bit(58, 1)
-    write_bit(59, 0)
-    write_bit(60, 0)
+    boxinaboxinaboxinaboxina()
 
     #0: enemy strength, 1: enemy health, 2: player strength stat, 3: player health, 4: player health stat, 5: potion amount, (6: action, 7: bools and temporary variables)
     write_byte(2, 0)
     write_byte(5, 1)
-
-    #enemy healed?
-    write_bit(57, 0)
 
     print("You encounter a small rodent!")
     
@@ -394,20 +397,11 @@ if read_byte(0) == 1:
         poti()
 
 if read_byte(0) == 2 and read_bit(62) == 0:
-    print(f"Level {read_byte(0)}! (enter to continue)")
-    input("")
-    print("\x1B[2J")
-
-    write_bit(58, 1)
-    write_bit(59, 0)
-    write_bit(60, 0)
+    boxinaboxinaboxinaboxina()
 
     #0: enemy strength, 1: enemy health, 2: player strength stat, 3: player health, 4: player health stat, 5: potion amount, (6: action, 7: bools and temporary variables)
     write_byte(3, 0)
     write_byte(4, 1)
-
-    #enemy healed?
-    write_bit(57, 0)
 
     print("You encounter a evil ghoul!")
     
@@ -421,20 +415,11 @@ if read_byte(0) == 2 and read_bit(62) == 0:
         poti()
 
 if read_byte(0) == 3 and read_bit(62) == 0:
-    print(f"Level {read_byte(0)}! (enter to continue)")
-    input("")
-    print("\x1B[2J")
-
-    write_bit(58, 1)
-    write_bit(59, 0)
-    write_bit(60, 0)
+    boxinaboxinaboxinaboxina()
 
     #0: enemy strength, 1: enemy health
     write_byte(2, 0)
     write_byte(10, 1)
-
-    #enemy healed?
-    write_bit(57, 0)
 
     print("You encounter an evil lake monster!")
     
@@ -448,9 +433,7 @@ if read_byte(0) == 3 and read_bit(62) == 0:
         poti()
 
 if read_byte(0) == 4 and read_bit(62) == 0:
-    print(f"Level {read_byte(0)}! (enter to continue)")
-    input("")
-    print("\x1B[2J")
+    boxinaboxinaboxinaboxina()
     print("You find an XP orb!\n")
 
     write_byte(5, 0)
@@ -459,9 +442,7 @@ if read_byte(0) == 4 and read_bit(62) == 0:
 
 if read_byte(0) == 5 and read_bit(62) == 0:
     print("BOSS\n")
-    print(f"Level {read_byte(0)}! (enter to continue)")
-    input("")
-    print("\x1B[2J")
+    boxinaboxinaboxinaboxina()
 
     write_bit(58, 1)
     write_bit(59, 0)
