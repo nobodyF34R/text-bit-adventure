@@ -816,7 +816,7 @@ if read_byte(0) == 5 and read_bit(62) == 0:
             print("Great, now try beat it without cheats!\n")
         else:
             print("The huge evil duck was defeated and peace was restored to the land!\n")
-if read_bit(61) == 1 and (read_byte(5) == 169 or read_byte(3) == 69) and (read_byte(5) == 169 or read_byte(3) == 69):
+if read_bit(61) == 1 and (read_byte(5) == 169 or read_byte(5) == 69) and (read_byte(3) == 169 or read_byte(3) == 69):
     print("https://bit.ly/3wcgAlt\n")
 print("\nEND.\n")
 pass
