@@ -92,11 +92,11 @@ write_byte(1, 5)
 write_bit(56,0)
 
 if read_bit(63) == 1:
-    for c in input("what is the code?: ")[:4]:
+    for c in input("What is the code?\n: ")[:4]:
         write_byte(int(bin(int.from_bytes(c.encode(), 'big')), 2), read_byte(6))
         write_byte(read_byte(6) + 1, 6)
 else:
-    print("psst, one code is \"poti\"! (enter to continue)")
+    print("Psst, one code is \"poti\"! (enter to continue)")
     input("")
 
 if read_bit(63) == 1 and read_byte(6) != 0:
@@ -289,7 +289,7 @@ if read_byte(0) == 1:
         print("\x1B[2J")
         
         if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a":
-            print(f"You attack! \n you do {read_byte(2)} damage!")
+            print(f"You attack! \nYou do {read_byte(2)} damage!")
             if read_byte(1)-read_byte(2) < 1:
                 write_byte(0, 1)
                 print(f"Enemy health is now {read_byte(1)}.")
@@ -427,7 +427,7 @@ if read_byte(0) == 2 and read_bit(62) == 0:
         print("\x1B[2J")
         
         if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a":
-            print(f"You attack! \n you do {read_byte(2)} damage!")
+            print(f"You attack! \nYou do {read_byte(2)} damage!")
             if read_byte(1)-read_byte(2) < 1:
                 write_byte(0, 1)
                 print(f"Enemy health is now {read_byte(1)}.")
@@ -565,7 +565,7 @@ if read_byte(0) == 3 and read_bit(62) == 0:
         print("\x1B[2J")
         
         if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a":
-            print(f"You attack! \n you do {read_byte(2)} damage!")
+            print(f"You attack! \nYou do {read_byte(2)} damage!")
             if read_byte(1)-read_byte(2) < 1:
                 write_byte(0, 1)
                 print(f"Enemy health is now {read_byte(1)}.")
@@ -728,7 +728,7 @@ if read_byte(0) == 5 and read_bit(62) == 0:
         print("\x1B[2J")
         
         if read_byte(6).to_bytes((read_byte(6).bit_length() + 7) // 8, 'big').decode() == "a":
-            print(f"You attack! \n you do {read_byte(2)} damage!")
+            print(f"You attack! \nYou do {read_byte(2)} damage!")
             if read_byte(1)-read_byte(2) < 1:
                 write_byte(0, 1)
                 print(f"Enemy health is now {read_byte(1)}.")
