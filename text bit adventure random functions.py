@@ -32,10 +32,10 @@ def read_bit(location):
  except:
   return 0
 def level():
- write_bit(57,0);write_bit(58,1);write_bit(59,0);write_bit(60,0);print(f"Enemy health is {read_byte(1)}.")
+ write_bit(57,0);write_bit(59,0);write_bit(60,0);print(f"Enemy health is {read_byte(1)}.")
  while read_byte(1)>0:
   write_byte(int(bin(int.from_bytes((input("Do you potion, defend or look at stats?\n: "if read_bit(60)==1 and read_bit(59)==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0].encode(),'big')),2),6)
-  while(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="p"and read_byte(5)==0)or(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()!="a"and read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()!="p"and read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()!="d")or(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="a"and read_bit(60)==1 and read_bit(59)==1):print("\x1B[2JNo more potions!")if read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="p"else print("\x1B[2JToo exausted.")if(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="a"and read_bit(60)==1 and read_bit(59)==1)else print(f"\x1B[2JPlayer stats:\npotion amount: {read_byte(5)}\ncurrent health: {read_byte(3)}\nmax health: {read_byte(4)}\nstrength: {read_byte(2)}\n\nenemy stats:\nhealth: {read_byte(1)}\nstrength: {read_byte(0)}\n")if(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="s"or read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="l")else print("\x1B[2JInvalid action.");write_bit(58,0)if read_bit(60)==1 and read_bit(59)==1 else 0;print("Nice.\n")if read_bit(61)==1 and(read_byte(5)==69 or read_byte(3)==69 or read_byte(5)==169 or read_byte(3)==169)and(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="s"or read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="l")else 0;write_byte(int(bin(int.from_bytes((input("Do you potion, defend or look at stats?\n: "if read_bit(60)==1 and read_bit(59)==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0].encode(),'big')),2),6)
+  while(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="p"and read_byte(5)==0)or(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()!="a"and read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()!="p"and read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()!="d")or(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="a"and read_bit(60)==1 and read_bit(59)==1):print("\x1B[2JNo more potions!")if read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="p"else print("\x1B[2JToo exausted.")if(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="a"and read_bit(60)==1 and read_bit(59)==1)else print(f"\x1B[2JPlayer stats:\npotion amount: {read_byte(5)}\ncurrent health: {read_byte(3)}\nmax health: {read_byte(4)}\nstrength: {read_byte(2)}\n\nenemy stats:\nhealth: {read_byte(1)}\nstrength: {read_byte(0)}\n")if(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="s"or read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="l")else print("\x1B[2JInvalid action.");print("Nice.\n")if read_bit(61)==1 and(read_byte(5)==69 or read_byte(3)==69 or read_byte(5)==169 or read_byte(3)==169)and(read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="s"or read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="l")else 0;write_byte(int(bin(int.from_bytes((input("Do you potion, defend or look at stats?\n: "if read_bit(60)==1 and read_bit(59)==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0].encode(),'big')),2),6)
   if read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="a":
    print(f"\x1B[2JYou attack!\nYou do {read_byte(2)} damage!");write_byte(0,1)if read_byte(1)-read_byte(2)<1 else write_byte(read_byte(1)-read_byte(2),1);print(f"Enemy health is now {read_byte(1)}.");write_bit(63,0);write_bit(59,1)if read_bit(60)==1 else 0;write_bit(60,1)if read_bit(60)==0 else 0
   elif read_byte(6).to_bytes((read_byte(6).bit_length()+7)//8,'big').decode()=="p":
@@ -46,7 +46,6 @@ def level():
    write_byte(read_byte(5)-1,5);print(f"You have {read_byte(5)} potion left!"if read_byte(5)==1 else f"You have {read_byte(5)} potions left!");write_bit(63,0);write_bit(60,0);write_bit(59,0);print("Nice.")if read_byte(5)==69 or read_byte(5)==169 and read_bit(61)==1 else 0
   else:
    print("\x1B[2JYou defend!");write_bit(63,1);write_bit(60,0);write_bit(59,0)
-  write_bit(58,1)
   if read_byte(1)>0:
    if next((int(3*(abs(hash(str(hash(str(hash(str(sum([read_byte(x)for x in range(8)]))))+str(i+1)))))%10**13)/10**13)for i in range(2**6)))==0 and read_bit(57)==0 and read_bit(60)==1:
     write_bit(57,1);write_byte(255,1)if read_byte(1)+2>255 else write_byte(read_byte(1)+2,1);print(f"\nEnemy heals!\nEnemy gains 2 health.\nEnemy has {read_byte(1)} health remaining!\n")
@@ -70,9 +69,7 @@ def poti():
  write_byte(read_byte(4),3);print(f"\nYou found {read_byte(0)} potions!\n");write_byte(read_byte(5)+read_byte(0),5)
 if(input("\x1B[2JHint, if you want to beat the game, only upgrade your strength by 1 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\nDo you have a secret code?\n: ")+" ").lower()[0]=="y":
  write_bit(63,1);write_bit(61,1)
-else:
- write_bit(63,0);write_bit(61,0)
-write_byte(0,6);write_bit(62,1);write_byte(1,5);write_bit(56,0)
+write_bit(62,1);write_byte(1,5)
 if read_bit(63)==1:
  for c in input("\x1B[2JWhat is the code?\n: ")[:4].lower():
   write_byte(int(bin(int.from_bytes(c.encode(),'big')),2),read_byte(6));write_byte(read_byte(6)+1,6)
