@@ -172,5 +172,5 @@ if read_byte(0)==3 and read_bit(62)==0:
 if read_byte(0)==4 and read_bit(62)==0:
  input(f"Level {read_byte(0)}! (enter to continue)");print("\x1B[2JYou find an XP orb!\n");write_byte(5,0);exp()
 if read_byte(0)==5 and read_bit(62)==0:
- input("\nBOSS (enter to continue)");print("\nYou encounter a massive evil duck!");write_byte(3,0);write_byte(20,1);level()
+ input("\nBOSS (enter to continue)");print("\x1B[2JYou encounter a massive evil duck!");write_byte(3,0);write_byte(20,1);level()
 print("\x1B[2JGreat, now try beat it without cheats!\n"if read_bit(56)==1 and read_bit(62)==0 else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if read_bit(62)==0 else"",end="");print("\nhttps://bit.ly/382Jahf")if read_byte(2)==255 and read_byte(4)==255 and read_byte(5)==0 else 0;print("\nhttps://bit.ly/3wcgAlt")if read_bit(61)==1 and(read_byte(5)==169 or read_byte(5)==69)and(read_byte(3)==169 or read_byte(3)==69)else 0;print("\nEND.\n")
