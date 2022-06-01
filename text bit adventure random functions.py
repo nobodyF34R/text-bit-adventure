@@ -1,23 +1,11 @@
 def a(B,C):
- global A;A=[X for Y in[list(7*"0"+bin(B)[2:])[-8:]if i==C else A[i*8:i*8+8] for i in range(8)]for X in Y]
+ global A;A=[int(X)for Y in[list(7*"0"+bin(B)[2:])[-8:]if i==C else A[i*8:i*8+8]for i in range(8)]for X in Y]
 def b(C,D=3):
- global A;E=A;A=[]
- for i in range(64):
-  if not i==C:
-   try:
-    A.append(E[i])
-   except:
-    A.append(0)
-  else:
-    A.append(0)if D!=True else A.append(1)
+ global A;A=[(0 if D!=True else 1)if i==C else A[i]for i in range(64)]
 def c(C):
  global A;return int(''.join([str(A[i+8*C])for i in range(8)]),2)
 def d(C):
- global A
- try:
-  return A[C]
- except:
-  return 0
+ global A;return A[C]
 def e():
  input(f"Level {c(0)}! (enter to continue)")
 def f():
@@ -44,7 +32,7 @@ def f():
      print(f"Enemy does {int(c(0)/2)} damage!");a(0,3)if c(3)-int(c(0)/2)<1 else a(c(3)-int(c(0)/2),3)
     else:
      print(f"Enemy does {c(0)} damage!");a(0,3)if c(3)-c(0)<1 else a(c(3)-c(0),3)
-    print(f"You have {c(3)} health remaining!\n"+"\nNice.\n"if d(61)==1 and(c(3)==69 or c(3)==169)else"")
+    print(f"You have {c(3)} health remaining!\n"+("\nNice.\n"if d(61)==1 and(c(3)==69 or c(3)==169)else""))
    if c(3)<1:
     print("SECRET ENDING\n\nOh! why hello there!\nIt's me,\nthe creator of this game!\nI just wanted to personally congratulate you on getting this ending.\nEven after getting god-like powers, you still laid down your sword and let the world return to its balance.\nYou are amazing and have shown so much dedication and patience to this game and i commend you for that!\nNo matter what they are, you can achieve your dreams!\nDon't let anything stop you!\nAnyways it's my time to go now.\nWith all that said,\ngoodbye player!"if c(2)==255 and c(4)==255 and d(61)==1 else"You die!");b(62,1);break
 def g():
@@ -56,7 +44,9 @@ def g():
   a(c(2)+1,2);print("\x1B[2JStrength increased by 1!")
 def h():
  a(c(4),3);print(f"\nYou found {c(0)} potions!\n");a(c(5)+c(0),5)
-A=[];b(62,1);a(1,5)
+def i():
+ b(62,0);a(1,5);b(56,0)
+A=[0 for _ in range(64)];b(62,1);a(1,5)
 if(input("\x1B[2JHint, if you want to beat the game, upgrade your strength by 1 or 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\n\nDo you have a secret code?\n: ")+" ").lower()[0]=="y":
  b(63,1);b(61,1)
 if d(63)==1:
@@ -70,7 +60,7 @@ if d(63)==1 and c(6)!=0:
    a(2,5);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["2","l","v","l"][i]:
-     b(62,0);a(1,5);b(56,0)
+     i()
   else:
    b(62,0)
  elif chr(c(0))=="3":
@@ -78,7 +68,7 @@ if d(63)==1 and c(6)!=0:
    a(3,5);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["3","=","0","3"][i]:
-     b(62,0);a(1,5);b(56,0)
+     i
   else:
    b(62,0)
  elif chr(c(0))=="e":
@@ -86,7 +76,7 @@ if d(63)==1 and c(6)!=0:
    a(4,5);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["e","x","p"][i]:
-     b(62,0);a(1,5);b(56,0)
+     i
   else:
    b(62,0)
  elif chr(c(0))=="l":
@@ -94,7 +84,7 @@ if d(63)==1 and c(6)!=0:
    a(5,5);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["l","v","l","5"][i]:
-     b(62,0);a(1,5);b(56,0)
+     i
   else:
    b(62,0)
  elif chr(c(0))=="t":
@@ -102,7 +92,7 @@ if d(63)==1 and c(6)!=0:
    a(255,5);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["t","n","t","y"][i]:
-     b(62,0);a(1,5);b(56,0)
+     i
   else:
    b(62,0)
  elif chr(c(0))=="b":
@@ -110,7 +100,7 @@ if d(63)==1 and c(6)!=0:
    a(254,5);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["b","0","$","$"][i]:
-     b(62,0);a(1,5);b(56,0)
+     i
   else:
    b(62,0)
  elif chr(c(0))=="p":
@@ -118,7 +108,7 @@ if d(63)==1 and c(6)!=0:
    a(253,5);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["p","o","t","i"][i]:
-     b(62,0);a(1,5);b(56,0)
+     i
   else:
    b(62,0)
  elif chr(c(0))=="\x1b":
@@ -126,25 +116,25 @@ if d(63)==1 and c(6)!=0:
    a(251,5);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["\x1b","[","a","\x1b"][i]:
-     b(62,0);a(1,5);b(56,0)
+     i
   else:
    b(62,0)
  else:
   b(62,0)
 else:
  b(62,0)
-input("\x1B[2JInvalid code. (enter to continue)")if d(62)==0 and d(61)==1 else 0;print("\x1B[2J");print("Cheat enabled.\n")if d(56)==1 else 0;a(c(5),0);b(62,0);b(61,0);a(5,4);a(2,2);a(2,5)
-if c(0)==255:
- a(1,0);a(20,4);a(20,2)
-if c(0)==254:
+input("\x1B[2JInvalid code. (enter to continue)")if d(62)==0 and d(61)==1 else 0;print("\x1B[2J");print("Cheat enabled.\n")if d(56)==1 else 0
+if c(5)==255:
+ a(1,5);a(20,4);a(20,2)
+if c(5)==254:
  a(5,0);a(20,4);a(20,2)
-if c(0)==253:
- a(1,0);a(100,5)
-if c(0)==251:
+if c(5)==253:
+ a(1,5);a(100,5)
+if c(5)==251:
  b(56,0);a(5,0);a(255,4);a(255,2);a(255,5);b(61,1)
 a(c(4),3)
-if c(0)==1:
- a(c(4),3);e();a(2,0);a(5,1);print("\x1B[2JYou encounter a small rodent!\n");f()
+if c(5)==1:
+ b(62,0);b(61,0);a(5,4);a(2,2);a(2,5);a(1,0);a(5,1);a(c(4),3);e();a(2,0);print("\x1B[2JYou encounter a small rodent!\n");f()
  if d(62)==0:
   print("\x1B[2JThe rodent was defeated!\n");a(2,0);g();h()
 if c(0)==2 and d(62)==0:
