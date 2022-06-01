@@ -44,9 +44,9 @@ def g():
   a(c(2)+1,2);print("\x1B[2JStrength increased by 1!")
 def h():
  a(c(4),3);print(f"\nYou found {c(0)} potions!\n");a(c(5)+c(0),5)
-def i():
- b(62,0);a(1,5);b(56,0)
-A=[0 for _ in range(64)];b(62,1);a(1,5)
+def k():
+ b(62,0);a(1,0);b(56,0)
+A=[0 for _ in range(64)];b(62,1);a(1,0)
 if(input("\x1B[2JHint, if you want to beat the game, upgrade your strength by 1 or 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\n\nDo you have a secret code?\n: ")+" ").lower()[0]=="y":
  b(63,1);b(61,1)
 if d(63)==1:
@@ -57,84 +57,84 @@ else:
 if d(63)==1 and c(6)!=0:
  if chr(c(0))=="2":
   if c(6)==4:
-   a(2,5);b(56,1)
+   a(2,0);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["2","l","v","l"][i]:
-     i()
+     k()
   else:
    b(62,0)
  elif chr(c(0))=="3":
   if c(6)==4:
-   a(3,5);b(56,1)
+   a(3,0);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["3","=","0","3"][i]:
-     i
+     k()
   else:
    b(62,0)
  elif chr(c(0))=="e":
   if c(6)==3:
-   a(4,5);b(56,1)
+   a(4,0);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["e","x","p"][i]:
-     i
+     k()
   else:
    b(62,0)
  elif chr(c(0))=="l":
   if c(6)==4:
-   a(5,5);b(56,1)
+   a(5,0);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["l","v","l","5"][i]:
-     i
+     k()
   else:
    b(62,0)
  elif chr(c(0))=="t":
   if c(6)==4:
-   a(255,5);b(56,1)
+   a(255,0);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["t","n","t","y"][i]:
-     i
+     k()
   else:
    b(62,0)
  elif chr(c(0))=="b":
   if c(6)==4:
-   a(254,5);b(56,1)
+   a(254,0);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["b","0","$","$"][i]:
-     i
+     k()
   else:
    b(62,0)
  elif chr(c(0))=="p":
   if c(6)==4:
-   a(253,5);b(56,1)
+   a(253,0);b(56,1)
    for i in range(c(6)):
     if not chr(c(i))==["p","o","t","i"][i]:
-     i
+     k()
   else:
    b(62,0)
  elif chr(c(0))=="\x1b":
   if c(6)==4:
-   a(251,5);b(56,1)
+   a(251,0);b(56,1)
    for i in range(c(6)):
-    if not chr(c(i))==["\x1b","[","a","\x1b"][i]:
-     i
+    if not chr(c(i))==["û","[","a","\x1b"][i]:
+     k()
   else:
    b(62,0)
  else:
   b(62,0)
 else:
  b(62,0)
-input("\x1B[2JInvalid code. (enter to continue)")if d(62)==0 and d(61)==1 else 0;print("\x1B[2J");print("Cheat enabled.\n")if d(56)==1 else 0
-if c(5)==255:
- a(1,5);a(20,4);a(20,2)
-if c(5)==254:
+input("\x1B[2JInvalid code. (enter to continue)")if d(62)==0 and d(61)==1 else 0;print("\x1B[2J");print("Cheat enabled.\n")if d(56)==1 else 0;b(62,0);b(61,0);a(5,4);a(2,2);a(2,5)
+if c(0)==255:
+ a(1,0);a(20,4);a(20,2)
+if c(0)==254:
  a(5,0);a(20,4);a(20,2)
-if c(5)==253:
- a(1,5);a(100,5)
-if c(5)==251:
+if c(0)==253:
+ a(1,0);a(100,5)
+if c(0)==251:
  b(56,0);a(5,0);a(255,4);a(255,2);a(255,5);b(61,1)
 a(c(4),3)
-if c(5)==1:
- b(62,0);b(61,0);a(5,4);a(2,2);a(2,5);a(1,0);a(5,1);a(c(4),3);e();a(2,0);print("\x1B[2JYou encounter a small rodent!\n");f()
+if c(0)==1:
+ a(5,1);e();a(2,0);print("\x1B[2JYou encounter a small rodent!\n");f()
  if d(62)==0:
   print("\x1B[2JThe rodent was defeated!\n");a(2,0);g();h()
 if c(0)==2 and d(62)==0:
