@@ -1,14 +1,5 @@
 def a(B,C):
- global A;F=[];[F.append(str(bin(B)[2:])[i-(8-len(str(bin(B)[2:])))])if 7-len(bin(B)[2:])<i else F.append(0)for i in range(8)];E=A;A=[]
- for i in range(8):
-  for x in range(8):
-   if not i==C:
-    try:
-     A.append(E[x+8*i])
-    except:
-     A.append(0)
-   else:
-    A.append(int(F[x]))
+ global A;A=[X for Y in[list(7*"0"+bin(B)[2:])[-8:]if i==C else A[i*8:i*8+8] for i in range(8)]for X in Y]
 def b(C,D=3):
  global A;E=A;A=[]
  for i in range(64):
@@ -45,7 +36,7 @@ def f():
   else:
    print("\x1B[2JYou defend!");b(63,1);b(60,0);b(59,0)
   if c(1)>0:
-   if int(hash(str(sum([c(x)for x in range(8)])))%3)==0 and d(57)==0 and d(60)==1:
+   if hash(str(sum([c(x)for x in range(8)])))%3==0 and d(57)==0 and d(60)==1:
     b(57,1);a(255,1)if c(1)+2>255 else a(c(1)+2,1);print(f"\nEnemy heals!\nEnemy gains 2 health.\nEnemy has {c(1)} health remaining!\n")
    else:
     b(57,0);print("\nEnemy attacks!")
@@ -53,7 +44,7 @@ def f():
      print(f"Enemy does {int(c(0)/2)} damage!");a(0,3)if c(3)-int(c(0)/2)<1 else a(c(3)-int(c(0)/2),3)
     else:
      print(f"Enemy does {c(0)} damage!");a(0,3)if c(3)-c(0)<1 else a(c(3)-c(0),3)
-    print(f"You have {c(3)} health remaining!\n");print("Nice.\n")if d(61)==1 and(c(3)==69 or c(3)==169)else 0
+    print(f"You have {c(3)} health remaining!\n"+"\nNice.\n"if d(61)==1 and(c(3)==69 or c(3)==169)else"")
    if c(3)<1:
     print("SECRET ENDING\n\nOh! why hello there!\nIt's me,\nthe creator of this game!\nI just wanted to personally congratulate you on getting this ending.\nEven after getting god-like powers, you still laid down your sword and let the world return to its balance.\nYou are amazing and have shown so much dedication and patience to this game and i commend you for that!\nNo matter what they are, you can achieve your dreams!\nDon't let anything stop you!\nAnyways it's my time to go now.\nWith all that said,\ngoodbye player!"if c(2)==255 and c(4)==255 and d(61)==1 else"You die!");b(62,1);break
 def g():
