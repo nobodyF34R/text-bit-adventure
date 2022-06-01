@@ -55,70 +55,14 @@ if d(63)==1:
 else:
  input('\x1B[2JPsst, one code is "poti"! (enter to continue)')
 if d(63)==1 and c(6)!=0:
- if chr(c(0))=="2":
-  if c(6)==4:
-   a(2,0);b(56,1)
-   for i in range(c(6)):
-    if not chr(c(i))==["2","l","v","l"][i]:
-     k()
-  else:
-   b(62,0)
- elif chr(c(0))=="3":
-  if c(6)==4:
-   a(3,0);b(56,1)
-   for i in range(c(6)):
-    if not chr(c(i))==["3","=","0","3"][i]:
-     k()
-  else:
-   b(62,0)
- elif chr(c(0))=="e":
-  if c(6)==3:
-   a(4,0);b(56,1)
-   for i in range(c(6)):
-    if not chr(c(i))==["e","x","p"][i]:
-     k()
-  else:
-   b(62,0)
- elif chr(c(0))=="l":
-  if c(6)==4:
-   a(5,0);b(56,1)
-   for i in range(c(6)):
-    if not chr(c(i))==["l","v","l","5"][i]:
-     k()
-  else:
-   b(62,0)
- elif chr(c(0))=="t":
-  if c(6)==4:
-   a(255,0);b(56,1)
-   for i in range(c(6)):
-    if not chr(c(i))==["t","n","t","y"][i]:
-     k()
-  else:
-   b(62,0)
- elif chr(c(0))=="b":
-  if c(6)==4:
-   a(254,0);b(56,1)
-   for i in range(c(6)):
-    if not chr(c(i))==["b","0","$","$"][i]:
-     k()
-  else:
-   b(62,0)
- elif chr(c(0))=="p":
-  if c(6)==4:
-   a(253,0);b(56,1)
-   for i in range(c(6)):
-    if not chr(c(i))==["p","o","t","i"][i]:
-     k()
-  else:
-   b(62,0)
- elif chr(c(0))=="\x1b":
-  if c(6)==4:
-   a(251,0);b(56,1)
-   for i in range(c(6)):
-    if not chr(c(i))==["û","[","a","\x1b"][i]:
-     k()
-  else:
-   b(62,0)
+ if chr(c(0))=="2":a(2,0);b(56,1)if[chr(c(i))for i in range(4)]==["2","l","v","l"]else k()
+ elif chr(c(0))=="3":a(3,0);b(56,1)if[chr(c(i))for i in range(4)]==["3","=","0","3"]else k()
+ elif chr(c(0))=="e":a(4,0);b(56,1)if[chr(c(i))for i in range(3)]==["e","x","p"]else k()
+ elif chr(c(0))=="l":a(5,0);b(56,1)if[chr(c(i))for i in range(4)]==["l","v","l","5"]else k()
+ elif chr(c(0))=="t":a(255,0);b(56,1)if[chr(c(i))for i in range(4)]==["t","n","t","y"]else k()
+ elif chr(c(0))=="b":a(254,0);b(56,1)if[chr(c(i))for i in range(4)]==["b","0","$","$"]else k()
+ elif chr(c(0))=="p":a(253,0);b(56,1)if[chr(c(i))for i in range(4)]==["p","o","t","i"]else k()
+ elif chr(c(0))=="\x1b":a(251,0);b(56,1)if[chr(c(i))for i in range(4)]==["û","[","a","\x1b"]else k()
  else:
   b(62,0)
 else:
