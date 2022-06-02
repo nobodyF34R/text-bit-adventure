@@ -35,17 +35,9 @@ def g():
 def h():
  a(c(4),3);print(f"\nYou found {c(0)} potions!\n");a(c(5)+c(0),5)
 A=[0 for _ in range(64)];a(1,0)
-if input("\x1B[2JHint, if you want to beat the game, upgrade your strength by 1 or 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\n\nDo you have a secret code?\n: ").lower()[:1]=="y":
+if input("\x1B[2JHint, if you want to beat the game, upgrade your strength by 1 or 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\nDo you have a secret code?\n: ").lower()[:1]=="y":
  for i in input("\x1B[2JWhat is the code?\n: ")[:4].lower():a(ord(i),c(6));a(c(6)+1,6)
- if c(0)==50:a(2,0)if[chr(c(i))for i in range(4)]==["2","l","v","l"]else a(1,0)
- elif c(0)==51:a(3,0)if[chr(c(i))for i in range(4)]==["3","=","0","3"]else a(1,0)
- elif c(0)==101:a(4,0)if[chr(c(i))for i in range(3)]==["e","x","p"]else a(1,0)
- elif c(0)==108:a(5,0)if[chr(c(i))for i in range(4)]==["l","v","l","5"]else a(1,0)
- elif c(0)==116:a(255,0)if[chr(c(i))for i in range(4)]==["t","n","t","y"]else a(1,0)
- elif c(0)==98:a(254,0)if[chr(c(i))for i in range(4)]==["b","0","$","$"]else a(1,0)
- elif c(0)==112:a(253,0)if[chr(c(i))for i in range(4)]==["p","o","t","i"]else a(1,0)
- elif c(0)==27:a(251,0)if[chr(c(i))for i in range(4)]==["\x1b","[","a","\x1b"]else a(1,0)
- else:a(1,0)
+ a(2,0)if[chr(c(i))for i in range(4)]==["2","l","v","l"]else a(3,0)if[chr(c(i))for i in range(4)]==["3","=","0","3"]else a(4,0)if[chr(c(i))for i in range(3)]==["e","x","p"]else a(5,0)if[chr(c(i))for i in range(4)]==["l","v","l","5"]else a(255,0)if[chr(c(i))for i in range(4)]==["t","n","t","y"]else a(254,0)if[chr(c(i))for i in range(4)]==["b","0","$","$"]else a(253,0)if[chr(c(i))for i in range(4)]==["p","o","t","i"]else a(251,0)if[chr(c(i))for i in range(4)]==["\x1b","[","a","\x1b"]else a(1,0)
  if c(0)==1:input("\x1B[2JInvalid code. (enter to continue)");print("\x1B[2J")
  else:b(56,1);print("\x1B[2JCheat enabled.\n")
 else:input('\x1B[2JPsst, one code is "poti"! (enter to continue)');print("\x1B[2J")
