@@ -12,12 +12,12 @@ def f():
  b(57,0);b(59,0);b(60,0);print(f"Enemy health is {c(1)}.\n")
  while c(1)>0:
   a(ord((input("Do you potion, defend or look at stats?\n: "if d(60)==1 and d(59)==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
-  while(chr(c(6))=="p"and c(5)==0)or(chr(c(6))!="a"and chr(c(6))!="p"and chr(c(6))!="d")or(chr(c(6))=="a"and d(60)==1 and d(59)==1):print("\x1B[2JNo more potions!")if chr(c(6))=="p"else print("\x1B[2JToo exausted.")if(chr(c(6))=="a"and d(60)==1 and d(59)==1)else print(f"\x1B[2JPlayer stats:\npotion amount: {c(5)}\ncurrent health: {c(3)}\nmax health: {c(4)}\nstrength: {c(2)}\n\nenemy stats:\nhealth: {c(1)}\nstrength: {c(0)}\n"+("\nNice.\n"if d(61)==1 and(c(5)==69 or c(3)==69 or c(5)==169 or c(3)==169)else""))if(chr(c(6))=="s"or chr(c(6))=="l")else print("\x1B[2JInvalid action.\n");a(ord((input("Do you potion, defend or look at stats?\n: "if d(60)==1 and d(59)==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
+  while(chr(c(6))=="p"and c(5)==0)or(chr(c(6))!="a"and chr(c(6))!="p"and chr(c(6))!="d")or(chr(c(6))=="a"and d(60)==1 and d(59)==1):print("\x1B[2JNo more potions!\n")if chr(c(6))=="p"else print("\x1B[2JToo exausted.\n")if(chr(c(6))=="a"and d(60)==1 and d(59)==1)else print(f"\x1B[2JPlayer stats:\npotion amount: {c(5)}\ncurrent health: {c(3)}\nmax health: {c(4)}\nstrength: {c(2)}\n\nenemy stats:\nhealth: {c(1)}\nstrength: {c(0)}\n"+("\nNice.\n"if c(5)==69 or c(3)==69 or c(5)==169 or c(3)==169 else""))if(chr(c(6))=="s"or chr(c(6))=="l")else print("\x1B[2JInvalid action.\n");a(ord((input("Do you potion, defend or look at stats?\n: "if d(60)==1 and d(59)==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
   if chr(c(6))=="a":print(f"\x1B[2JYou attack!\nYou do {c(2)} damage!");a(0,1)if c(1)-c(2)<1 else a(c(1)-c(2),1);print(f"Enemy health is now {c(1)}.");b(63,0);b(59,1)if d(60)==1 else 0;b(60,1)if d(60)==0 else 0
   elif chr(c(6))=="p":
    if 5+c(3)>c(4):print(f"\x1B[2JYou restore {c(4)-c(3)} health!");a(c(4),3)
    else:print(f"\x1B[2JYou restore 5 health!");a(c(3)+5,3)
-   a(c(5)-1,5);print(f"You have {c(5)} potion left!"if c(5)==1 else f"You have {c(5)} potions left!");b(63,0);b(60,0);b(59,0);print("Nice.")if c(5)==69 or c(5)==169 and d(61)==1 else 0
+   a(c(5)-1,5);print(f"You have {c(5)} potion left!"if c(5)==1 else f"You have {c(5)} potions left!");b(63,0);b(60,0);b(59,0);print("\nNice.")if c(5)==69 or c(5)==169 and d(61)==1 else 0
   else:print("\x1B[2JYou defend!");b(63,1);b(60,0);b(59,0)
   if c(1)>0:
    if hash(str(sum([c(x)for x in range(8)])))%3==0 and d(57)==0 and d(60)==1:b(57,1);a(255,1)if c(1)+2>255 else a(c(1)+2,1);print(f"\nEnemy heals!\nEnemy gains 2 health.\nEnemy has {c(1)} health remaining!\n")
@@ -37,20 +37,20 @@ def h():
 A=[0 for _ in range(64)];a(1,0)
 if(input("\x1B[2JHint, if you want to beat the game, upgrade your strength by 1 or 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\n\nDo you have a secret code?\n: ")+" ").lower()[0]=="y":
  for i in input("\x1B[2JWhat is the code?\n: ")[:4].lower():a(ord(i),c(6));a(c(6)+1,6)
- if chr(c(0))=="2":a(2,0)if[chr(c(i))for i in range(4)]==["2","l","v","l"]else a(1,0)
- elif chr(c(0))=="3":a(3,0)if[chr(c(i))for i in range(4)]==["3","=","0","3"]else a(1,0)
- elif chr(c(0))=="e":a(4,0)if[chr(c(i))for i in range(3)]==["e","x","p"]else a(1,0)
- elif chr(c(0))=="l":a(5,0)if[chr(c(i))for i in range(4)]==["l","v","l","5"]else a(1,0)
- elif chr(c(0))=="t":a(255,0)if[chr(c(i))for i in range(4)]==["t","n","t","y"]else a(1,0)
- elif chr(c(0))=="b":a(254,0)if[chr(c(i))for i in range(4)]==["b","0","$","$"]else a(1,0)
- elif chr(c(0))=="p":a(253,0)if[chr(c(i))for i in range(4)]==["p","o","t","i"]else a(1,0)
+ if c(0)==50:a(2,0)if[chr(c(i))for i in range(4)]==["2","l","v","l"]else a(1,0)
+ elif c(0)==51:a(3,0)if[chr(c(i))for i in range(4)]==["3","=","0","3"]else a(1,0)
+ elif c(0)==101:a(4,0)if[chr(c(i))for i in range(3)]==["e","x","p"]else a(1,0)
+ elif c(0)==108:a(5,0)if[chr(c(i))for i in range(4)]==["l","v","l","5"]else a(1,0)
+ elif c(0)==116:a(255,0)if[chr(c(i))for i in range(4)]==["t","n","t","y"]else a(1,0)
+ elif c(0)==98:a(254,0)if[chr(c(i))for i in range(4)]==["b","0","$","$"]else a(1,0)
+ elif c(0)==112:a(253,0)if[chr(c(i))for i in range(4)]==["p","o","t","i"]else a(1,0)
  elif c(0)==27:a(251,0)if[chr(c(i))for i in range(4)]==["\x1b","[","a","\x1b"]else a(1,0)
  else:a(1,0)
  if c(0)==1:input("\x1B[2JInvalid code. (enter to continue)");print("\x1B[2J")
  else:b(56,1);print("\x1B[2JCheat enabled.\n")
 else:input('\x1B[2JPsst, one code is "poti"! (enter to continue)');print("\x1B[2J")
 a(5,4);a(2,2);a(2,5)
-if c(0)==255:a(1,0);a(20,4);a(20,2)
+if c(0)==255:a(1,0);a(20,4);a(20,2);a(20,5)
 if c(0)==254:a(5,0);a(20,4);a(20,2)
 if c(0)==253:a(1,0);a(100,5)
 if c(0)==251:b(56,0);a(5,0);a(255,4);a(255,2);a(255,5);b(61,1)
