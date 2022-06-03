@@ -1,16 +1,12 @@
-def a(B,C=0):
- global A;A=[int(X)for Y in[list(7*"0"+bin(B)[2:])[-8:]if i==C else A[i*8:i*8+8]for i in range(8)]for X in Y]
-def b(C,D=0):
- global A;A=[(0 if D!=True else 1)if i==C else A[i]for i in range(64)]
-def c(C):
- return int(''.join([str(A[i+8*C])for i in range(8)]),2)
-def d():
- input(f"Level {c(0)}! (enter to continue)")
+def a(B,C=0):global A;A=[int(X)for Y in[list(7*"0"+bin(B)[2:])[-8:]if i==C else A[i*8:i*8+8]for i in range(8)]for X in Y]
+def b(C,D=0):global A;A=[(0 if D!=1 else 1)if i==C else A[i]for i in range(64)]
+def c(C):return int(''.join([str(A[i+8*C])for i in range(8)]),2)
+def d():input(f"Level {c(0)}! (enter to continue)")
 def e():
  b(57);b(59);b(60);print(f"Enemy health is {c(1)}.\n")
  while c(1)>0:
   a(ord((input("Do you potion, defend or look at stats?\n: "if A[60]==1 and A[59]==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
-  while(c(6)==112 and c(5)==0)or(c(6)!=97 and c(6)!=112 and c(6)!=100)or(c(6)==97 and A[60]==1 and A[59]==1):print("\x1B[2JNo more potions!\n")if c(6)==112 else print("\x1B[2JToo exausted.\n")if(c(6)==97 and A[60]==1 and A[59]==1)else print(f"\x1B[2JPlayer stats:\npotion amount: {c(5)}\ncurrent health: {c(3)}\nmax health: {c(4)}\nstrength: {c(2)}\n\nenemy stats:\nhealth: {c(1)}\nstrength: {c(0)}\n"+("\nNice.\n"if c(5)==69 or c(3)==69 or c(5)==169 or c(3)==169 else""))if(c(6)==115 or c(6)==108)else print("\x1B[2JInvalid action.\n");a(ord((input("Do you potion, defend or look at stats?\n: "if A[60]==1 and A[59]==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
+  while c(6)==112 and c(5)==0 or c(6)!=97 and c(6)!=112 and c(6)!=100 or c(6)==97 and A[60]==1 and A[59]==1:print("\x1B[2JNo more potions!\n")if c(6)==112 else print("\x1B[2JToo exausted.\n")if c(6)==97 and A[60]==1 and A[59]==1 else print(f"\x1B[2JPlayer stats:\npotion amount: {c(5)}\ncurrent health: {c(3)}\nmax health: {c(4)}\nstrength: {c(2)}\n\nenemy stats:\nhealth: {c(1)}\nstrength: {c(0)}\n"+("\nNice.\n"if c(5)==69 or c(3)==69 or c(5)==169 or c(3)==169 else""))if c(6)==115 or c(6)==108 else print("\x1B[2JInvalid action.\n");a(ord((input("Do you potion, defend or look at stats?\n: "if A[60]==1 and A[59]==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
   if c(6)==97:print(f"\x1B[2JYou attack!\nYou do {c(2)} damage!");a(0,1)if c(1)-c(2)<1 else a(c(1)-c(2),1);print(f"Enemy health is now {c(1)}.");b(63);b(59,1)if A[60]==1 else 0;b(60,1)if A[60]==0 else 0
   elif c(6)==112:
    if 5+c(3)>c(4):print(f"\x1B[2JYou restore {c(4)-c(3)} health!");a(c(4),3)
@@ -30,8 +26,7 @@ def f():
  while c(1)!=104 and c(1)!=109 and c(1)!=115:print("\x1B[2JInvalid option.\n");a(ord((input("Would you like to increase your max health or strength?\n: ")+" ")[0]),1)
  if c(1)==104 or c(1)==109:a(c(4)+1,4);print("\x1B[2JMax health increased by 1!")
  else:a(c(2)+1,2);print("\x1B[2JStrength increased by 1!")
-def g():
- a(c(4),3);print(f"\nYou found {c(0)} potions!\n");a(c(5)+c(0),5)
+def g():a(c(4),3);print(f"\nYou found {c(0)} potions!\n");a(c(5)+c(0),5)
 A=[0 for _ in range(64)];a(1)
 if input("\x1B[2JHint, if you want to beat the game, upgrade your strength by 1 or 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\nDo you have a secret code?\n: ").lower()[:1]=="y":
  for i in input("\x1B[2JWhat is the code?\n: ")[:4].lower():a(ord(i),c(6));a(c(6)+1,6)
