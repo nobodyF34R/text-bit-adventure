@@ -4,9 +4,9 @@ def b(C,D=0):
  global A;A=[(0 if D!=True else 1)if i==C else A[i]for i in range(64)]
 def c(C):
  return int(''.join([str(A[i+8*C])for i in range(8)]),2)
-def e():
+def d():
  input(f"Level {c(0)}! (enter to continue)")
-def f():
+def e():
  b(57);b(59);b(60);print(f"Enemy health is {c(1)}.\n")
  while c(1)>0:
   a(ord((input("Do you potion, defend or look at stats?\n: "if A[60]==1 and A[59]==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
@@ -25,12 +25,12 @@ def f():
     else:print(f"Enemy does {c(0)} damage!");a(0,3)if c(3)-c(0)<1 else a(c(3)-c(0),3)
     print(f"You have {c(3)} health remaining!\n"+("\nNice.\n"if c(3)==69 or c(3)==169 else""))
    if c(3)<1:print("SECRET ENDING\n\nOh! why hello there!\nIt's me,\nthe creator of this game!\nI just wanted to personally congratulate you on getting this ending.\nEven after getting god-like powers, you still laid down your sword and let the world return to its balance.\nYou are amazing and have shown so much dedication and patience to this game and i commend you for that!\nNo matter what they are, you can achieve your dreams!\nDon't let anything stop you!\nAnyways it's my time to go now.\nWith all that said,\ngoodbye player!"if c(2)==255 and c(4)==255 and A[61]==1 else"You die!");b(62,1);break
-def g():
+def f():
  a(ord((input("Would you like to increase your max health or strength?\n: ")+" ").lower()[0]),1)
  while c(1)!=104 and c(1)!=109 and c(1)!=115:print("\x1B[2JInvalid option.\n");a(ord((input("Would you like to increase your max health or strength?\n: ")+" ")[0]),1)
  if c(1)==104 or c(1)==109:a(c(4)+1,4);print("\x1B[2JMax health increased by 1!")
  else:a(c(2)+1,2);print("\x1B[2JStrength increased by 1!")
-def h():
+def g():
  a(c(4),3);print(f"\nYou found {c(0)} potions!\n");a(c(5)+c(0),5)
 A=[0 for _ in range(64)];a(1)
 if input("\x1B[2JHint, if you want to beat the game, upgrade your strength by 1 or 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\nDo you have a secret code?\n: ").lower()[:1]=="y":
@@ -45,9 +45,9 @@ if c(0)==254:a(5);a(20,4);a(20,2)
 if c(0)==253:a(1);a(100,5)
 if c(0)==251:b(56);a(5);a(255,4);a(255,2);a(255,5);b(61,1)
 a(c(4),3)
-if c(0)==1:a(5,1);e();a(2);print("\x1B[2JYou encounter a small rodent!\n");f()
-if c(0)==2 and A[62]==0:print("\x1B[2JThe rodent was defeated!\n");g();h();e();a(3);a(4,1);print("\x1B[2JYou encounter a evil ghoul!\n");f()
-if c(0)==3 and A[62]==0:print("\x1B[2JThe ghoul was defeated!\n");g();h();e();a(2);a(10,1);print("\x1B[2JYou encounter an evil lake monster!\n");f();a(4)
-if c(0)==4 and A[62]==0:print("\x1B[2JThe lake monster was defeated!\n");g();h();e();print("\x1B[2JYou find an XP orb!\n");a(5);g()
-if c(0)==5 and A[62]==0:input("\nBOSS (enter to continue)");print("\x1B[2JYou encounter a massive evil duck!\n");a(3);a(20,1);f()
+if c(0)==1:a(5,1);d();a(2);print("\x1B[2JYou encounter a small rodent!\n");e()
+if c(0)==2 and A[62]==0:print("\x1B[2JThe rodent was defeated!\n");f();g();d();a(3);a(4,1);print("\x1B[2JYou encounter a evil ghoul!\n");e()
+if c(0)==3 and A[62]==0:print("\x1B[2JThe ghoul was defeated!\n");f();g();d();a(2);a(10,1);print("\x1B[2JYou encounter an evil lake monster!\n");e();a(4)
+if c(0)==4 and A[62]==0:print("\x1B[2JThe lake monster was defeated!\n");f();g();d();print("\x1B[2JYou find an XP orb!\n");a(5);f()
+if c(0)==5 and A[62]==0:input("\nBOSS (enter to continue)");print("\x1B[2JYou encounter a massive evil duck!\n");a(3);a(20,1);e()
 print("\x1B[2JGreat, now try beat it without cheats!\n"if A[56]==1 and A[62]==0 else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]==0 else"",end="");print("\nhttps://bit.ly/382Jahf")if c(2)==255 and c(4)==255 and c(5)==0 else 0;print("\nhttps://bit.ly/3wcgAlt")if A[61]==1 and(c(5)==169 or c(5)==69)and(c(3)==169 or c(3)==69)else 0;print("\nEND.\n")
