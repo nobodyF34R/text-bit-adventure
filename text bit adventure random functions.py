@@ -30,7 +30,7 @@ def g():print("\nYou found",c(0),"potions!\n");a(c(5)+c(0),5)
 def h():print("\x1B[2JYou encounter a",end="")
 def j():print("\x1B[2JThe ",end="")
 A=[0 for _ in range(64)];a(1)
-if input("\x1B[2JHint, if you want to beat the game, upgrade your strength by 1 or 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\nDo you have a secret code?\n: ").lower()[:1]=="y":
+if input("\x1B[2JHint, if you want to beat the game, upgrade your health by at least 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\nDo you have a secret code?\n: ").lower()[:1]=="y":
  for i in input("\x1B[2JWhat is the code?\n: ")[:4].lower():a(ord(i),c(6));a(c(6)+1,6)
  a(2)if[chr(c(i))for i in range(4)]==["2","l","v","l"]else a(3)if[chr(c(i))for i in range(4)]==["3","=","0","3"]else a(4)if[chr(c(i))for i in range(3)]==["e","x","p"]else a(5)if[chr(c(i))for i in range(4)]==["l","v","l","5"]else a(255)if[chr(c(i))for i in range(4)]==["t","n","t","y"]else a(254)if[chr(c(i))for i in range(4)]==["b","0","$","$"]else a(253)if[chr(c(i))for i in range(4)]==["p","o","t","i"]else a(251)if[chr(c(i))for i in range(4)]==["\x1b","[","a","\x1b"]else a(1)
  if c(0)==1:input("\x1B[2JInvalid code. (enter to continue)");print("\x1B[2J")
