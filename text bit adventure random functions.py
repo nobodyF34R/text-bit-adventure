@@ -3,7 +3,7 @@ def b(C,D=0):global A;A=[(0 if D!=1 else 1)if i==C else A[i]for i in range(64)]
 def c(C):return int(''.join([str(A[i+8*C])for i in range(8)]),2)
 def d():input(f"Level {c(0)}! (enter to continue)")
 def e():
- b(57);b(59);b(60);print(f"\nEnemy health is {c(1)}.\n")
+ a(c(4),3);b(57);b(59);b(60);print(f"\nEnemy health is {c(1)}.\n")
  while c(1)>0:
   a(ord((input("Do you potion, defend or look at stats?\n: "if A[60]==1 and A[59]==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
   while c(6)==112 and c(5)==0 or c(6)!=97 and c(6)!=112 and c(6)!=100 or c(6)==97 and A[60]==1 and A[59]==1:print("\x1B[2JNo more potions!\n")if c(6)==112 else print("\x1B[2JToo exausted.\n")if c(6)==97 and A[60]==1 and A[59]==1 else print(f"\x1B[2JPlayer stats:\npotion amount: {c(5)}\ncurrent health: {c(3)}\nmax health: {c(4)}\nstrength: {c(2)}\n\nenemy stats:\nhealth: {c(1)}\nstrength: {c(0)}\n"+("\nNice.\n"if c(5)==69 or c(3)==69 or c(5)==169 or c(3)==169 else""))if c(6)==115 or c(6)==108 else print("\x1B[2JInvalid action.\n");a(ord((input("Do you potion, defend or look at stats?\n: "if A[60]==1 and A[59]==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
@@ -26,7 +26,7 @@ def f():
  while c(1)!=104 and c(1)!=109 and c(1)!=115:print("\x1B[2JInvalid option.\n");a(ord((input("Would you like to increase your max health or strength?\n: ")+" ")[0]),1)
  if c(1)==104 or c(1)==109:a(c(4)+1,4);print("\x1B[2JMax health increased by 1!")
  else:a(c(2)+1,2);print("\x1B[2JStrength increased by 1!")
-def g():a(c(4),3);print("\nYou found",c(0),"potions!\n");a(c(5)+c(0),5)
+def g():print("\nYou found",c(0),"potions!\n");a(c(5)+c(0),5)
 def h():print("\x1B[2JYou encounter a",end="")
 def j():print("\x1B[2JThe ",end="")
 A=[0 for _ in range(64)];a(1)
@@ -48,4 +48,3 @@ if c(0)==3 and A[62]==0:j();print("ghoul was defeated!\n");f();g();d();a(2);a(10
 if c(0)==4 and A[62]==0:j();print("lake monster was defeated!\n");f();g();d();print("\x1B[2JYou find an XP orb!\n");a(5);f()
 if c(0)==5:input("\nBOSS (enter to continue)");h();print(" massive evil duck!");a(3);a(20,1);e()
 print("\x1B[2JGreat, now try beat it without cheats!\n"if A[56]==1 and A[62]==0 else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]==0 else"",end="");print("\nhttps://bit.ly/382Jahf")if c(2)==255 and c(4)==255 and c(5)==0 else 0;print("\nhttps://bit.ly/3wcgAlt")if A[61]==1 and(c(5)==169 or c(5)==69)and(c(3)==169 or c(3)==69)else 0;print("\nEND.\n")
-302000-45808-45728-45624-45520
