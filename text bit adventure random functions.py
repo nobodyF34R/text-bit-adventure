@@ -1,9 +1,9 @@
-def a(B,C=0):global A;A=[int(X)for Y in[list(7*"0"+bin(B)[2:])[-8:]if i==C else A[i*8:i*8+8]for i in range(8)]for X in Y]
-def b(C,D=0):global A;A=[(0 if D!=1 else 1)if i==C else A[i]for i in range(64)]
+def a(B=1,C=0):global A;A=[int(X)for Y in[list(7*"0"+bin(B)[2:])[-8:]if i==C else A[i*8:i*8+8]for i in range(8)]for X in Y]
+def b(C=60,D=0):global A;A=[(0 if D!=1 else 1)if i==C else A[i]for i in range(64)]
 def c(C=0):return int(''.join([str(A[i+8*C])for i in range(8)]),2)
 def d():input(f"Level {c()}! (enter to continue)")
 def e():
- a(c(4),3);b(57);b(59);b(60);print(f"\nEnemy health is {c(1)}.\n")
+ a(c(4),3);b(57);b(59);b();print(f"\nEnemy health is {c(1)}.\n")
  while c(1)>0:
   a(ord((input("Do you potion, defend or look at stats?\n: "if A[60]==1 and A[59]==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
   while c(6)==112 and c(5)==0 or c(6)!=97 and c(6)!=112 and c(6)!=100 or c(6)==97 and A[60]==1 and A[59]==1:print("\x1B[2JNo more potions!\n")if c(6)==112 else print("\x1B[2JToo exausted.\n")if c(6)==97 and A[60]==1 and A[59]==1 else print(f"\x1B[2JPlayer stats:\npotion amount: {c(5)}\ncurrent health: {c(3)}\nmax health: {c(4)}\nstrength: {c(2)}\n\nenemy stats:\nhealth: {c(1)}\nstrength: {c()}\n"+("\nNice.\n"if c(5)==69 or c(3)==69 or c(5)==169 or c(3)==169 else""))if c(6)==115 or c(6)==108 else print("\x1B[2JInvalid action.\n");a(ord((input("Do you potion, defend or look at stats?\n: "if A[60]==1 and A[59]==1 else"Do you attack, potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
@@ -11,8 +11,8 @@ def e():
   elif c(6)==112:
    if 5+c(3)>c(4):print("\x1B[2JYou restore",c(4)-c(3),"health!");a(c(4),3)
    else:print(f"\x1B[2JYou restore 5 health!");a(c(3)+5,3)
-   a(c(5)-1,5);print(f"You have {c(5)} potion left!"if c(5)==1 else f"You have {c(5)} potions left!"+("\n\nNice."if c(5)==69 or c(5)==169 else""));b(63);b(60);b(59)
-  else:print("\x1B[2JYou defend!");b(63,1);b(60);b(59)
+   a(c(5)-1,5);print(f"You have {c(5)} potion left!"if c(5)==1 else f"You have {c(5)} potions left!"+("\n\nNice."if c(5)==69 or c(5)==169 else""));b(63);b();b(59)
+  else:print("\x1B[2JYou defend!");b(63,1);b();b(59)
   if c(1)>0:
    if hash(str(A))%3==0 and A[57]==0 and A[60]==1:b(57,1);a(255 if c(1)+2>255 else c(1)+2,1);print("\nEnemy heals!\nEnemy gains 2 health.\nEnemy has",c(1),"health remaining!\n")
    else:
@@ -29,17 +29,17 @@ def f():
 def g():print("\nYou found",c(),"potions!\n");a(c(5)+c(),5)
 def h():print("\x1B[2JYou encounter a",end="")
 def j():print("\x1B[2JThe ",end="")
-A=[0 for _ in range(64)];a(1)
+A=[0]*64;a()
 if input("\x1B[2JHint, if you want to beat the game, upgrade your health by at least 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\nDo you have a secret code?\n: ").lower()[:1]=="y":
  for i in input("\x1B[2JWhat is the code?\n: ")[:4].lower():a(ord(i),c(6));a(c(6)+1,6)
- a(2)if[chr(c(i))for i in range(4)]==["2","l","v","l"]else a(3)if[chr(c(i))for i in range(4)]==["3","=","0","3"]else a(4)if[chr(c(i))for i in range(3)]==["e","x","p"]else a(5)if[chr(c(i))for i in range(4)]==["l","v","l","5"]else a(9)if[chr(c(i))for i in range(4)]==["t","n","t","y"]else a(8)if[chr(c(i))for i in range(4)]==["b","0","$","$"]else a(7)if[chr(c(i))for i in range(4)]==["p","o","t","i"]else a(6)if[chr(c(i))for i in range(4)]==["\x1b","[","a","\x1b"]else a(1)
+ a(2)if[chr(c(i))for i in range(4)]==["2","l","v","l"]else a(3)if[chr(c(i))for i in range(4)]==["3","=","0","3"]else a(4)if[chr(c(i))for i in range(3)]==["e","x","p"]else a(5)if[chr(c(i))for i in range(4)]==["l","v","l","5"]else a(9)if[chr(c(i))for i in range(4)]==["t","n","t","y"]else a(8)if[chr(c(i))for i in range(4)]==["b","0","$","$"]else a(7)if[chr(c(i))for i in range(4)]==["p","o","t","i"]else a(6)if[chr(c(i))for i in range(4)]==["\x1b","[","a","\x1b"]else a()
  if c()==1:input("\x1B[2JInvalid code. (enter to continue)");print("\x1B[2J")
  else:b(56,1);print("\x1B[2JCheat enabled.\n")
 else:input('\x1B[2JPsst, one code is "poti"! (enter to continue)');print("\x1B[2J")
 a(5,4);a(2,2);a(2,5)
-if c()==9:a(1);a(20,4);a(20,2);a(20,5)
+if c()==9:a();a(20,4);a(20,2);a(20,5)
 if c()==8:a(5);(20,2)
-if c()==7:a(1);a(100,5)
+if c()==7:a();a(100,5)
 if c()==6:b(56);a(5);a(255,4);a(255,2);a(255,5);b(61,1)
 if c()==1:a(5,1);d();a(2);h();print(" small rodent!");e()
 if c()==2 and A[62]==0:j();print("rodent was defeated!\n");f();g();d();a(3);a(4,1);h();print(" evil ghoul!");e()
