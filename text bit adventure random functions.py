@@ -10,8 +10,8 @@ def e():
   if c(6)==97:print("\x1B[2JYou attack!\nYou do",c(2),"damage!");a(0 if c(1)-c(2)<1 else c(1)-c(2),1);print(f"Enemy health is now {c(1)}.");b(63);b(59 if A[60]==1 else 60,1)
   elif c(6)==112:
    if 5+c(3)>c(4):print("\x1B[2JYou restore",c(4)-c(3),"health!");a(c(4),3)
-   else:print(f"\x1B[2JYou restore 5 health!");a(c(3)+5,3)
-   a(c(5)-1,5);print(f"You have {c(5)} potion left!"if c(5)==1 else f"You have {c(5)} potions left!"+("\n\nNice."if c(5)==69 or c(5)==169 else""));b(63);b();b(59)
+   else:print("\x1B[2JYou restore 5 health!");a(c(3)+5,3)
+   a(c(5)-1,5);print("You have 1 potion left!"if c(5)==1 else "You have"+c(5)+"potions left!"+("\n\nNice."if c(5)==69 or c(5)==169 else""));b(63);b();b(59)
   else:print("\x1B[2JYou defend!");b(63,1);b();b(59)
   if c(1)>0:
    if hash(str(A))%3==0 and A[57]==0 and A[60]==1:b(57,1);a(255 if c(1)+2>255 else c(1)+2,1);print("\nEnemy heals!\nEnemy gains 2 health.\nEnemy has",c(1),"health remaining!\n")
@@ -32,7 +32,7 @@ def j():print("\x1B[2JThe ",end="")
 A=[0]*64;a()
 if input("\x1B[2JHint, if you want to beat the game, upgrade your health by at least 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\nDo you have a secret code?\n: ").lower()[:1]=="y":
  for i in input("\x1B[2JWhat is the code?\n: ")[:4].lower():a(ord(i),c(6));a(c(6)+1,6)
- a(2)if[chr(c(i))for i in range(4)]==["2","l","v","l"]else a(3)if[chr(c(i))for i in range(4)]==["3","=","0","3"]else a(4)if[chr(c(i))for i in range(3)]==["e","x","p"]else a(5)if[chr(c(i))for i in range(4)]==["l","v","l","5"]else a(9)if[chr(c(i))for i in range(4)]==["t","n","t","y"]else a(8)if[chr(c(i))for i in range(4)]==["b","0","$","$"]else a(7)if[chr(c(i))for i in range(4)]==["p","o","t","i"]else a(6)if[chr(c(i))for i in range(4)]==["\x1b","[","a","\x1b"]else a()
+ a(2 if[c(i)for i in range(4)]==[50,108,118,108]else 3 if[c(i)for i in range(4)]==[51,61,48,51]else 4 if[c(i)for i in range(3)]==[101,120,112]else 5 if[c(i)for i in range(4)]==[108,118,108,53]else 9 if[c(i)for i in range(4)]==[116,110,116,121]else 8 if[c(i)for i in range(4)]==[98,48,36,36]else 7 if[c(i)for i in range(4)]==[112,111,116,105]else 6 if[c(i)for i in range(4)]==[27,91,97,27]else 1)
  if c()==1:input("\x1B[2JInvalid code. (enter to continue)");print("\x1B[2J")
  else:b(56,1);print("\x1B[2JCheat enabled.\n")
 else:input('\x1B[2JPsst, one code is "poti"! (enter to continue)');print("\x1B[2J")
@@ -46,4 +46,4 @@ if c()==2 and A[62]==0:j();print("rodent was defeated!\n");f();g();d();a(3);a(4,
 if c()==3 and A[62]==0:j();print("ghoul was defeated!\n");f();g();d();a(2);a(10,1);h();print("n evil lake monster!");e();a(4)
 if c()==4 and A[62]==0:j();print("lake monster was defeated!\n");f();g();d();print("\x1B[2JYou find an XP orb!\n");a(5);f()
 if c()==5:input("\nBOSS (enter to continue)");h();print(" massive evil duck!");a(3);a(20,1);e()
-print("\x1B[2JGreat, now try beat it without cheats!\n"if A[56]==1 and A[62]==0 else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]==0 else"",end="");print("\nhttps://bit.ly/382Jahf"if c(2)==255 and c(4)==255 and c(5)==0 else"\nhttps://bit.ly/3wcgAlt"if A[61]==1 and(c(5)==169 or c(5)==69)and(c(3)==169 or c(3)==69)else "",end="");print("\nEND.\n")
+print("\x1B[2JGreat, now try beat it without cheats!\n"if A[56]==1 and A[62]==0 else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]==0 else"",end="");print("\nhttps://bit.ly/382Jahf"if c(2)==255 and c(4)==255 and c(5)==0 else"\nhttps://bit.ly/3wcgAlt"if A[61]==1 and(c(5)==169 or c(5)==69)and(c(3)==169 or c(3)==69)else"",end="");print("\nEND.\n")
