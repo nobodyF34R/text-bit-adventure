@@ -6,7 +6,7 @@ def e():
  a(c(4),3);b(57);b(59);b();print(f"\nEnemy health is {c(1)}.")
  while c(1)>0:
   a(0,6)
-  while(c(6),c(5))==(112,0)or not c(6)in[97,112,100]or(c(6),A[60]+A[59])==(97,2):print("\x1B[2JNo more potions!\n")if c(6)==112 else print("\x1B[2JToo exausted.\n")if(c(6),A[60]+A[59])==(97,2)else print("\x1B[2JPlayer stats:\npotion amount:",c(5),"\ncurrent health:",c(3),"\nmax health:",c(4),"\nstrength:",c(2),"\n\nenemy stats:\nhealth:",c(1),"\nstrength:",c(),("\n\nNice.\n"if c(5)in[69,169]or c(3)in[169,69]else"\n"))if c(6)in[115,108]else print("\x1B[2JInvalid action.\n"if c(6)!=0 else"");a(ord((input("Do you "+(""if A[60]+A[59]==2 else"attack, ")+"potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
+  while(c(6),c(5))==(112,0)or not c(6)in[97,112,100]or(c(6),A[60]+A[59])==(97,2):print("\x1B[2JNo more potions!\n"if c(6)==112 else"\x1B[2JToo exausted.\n"if(c(6),A[60]+A[59])==(97,2)else str(print("\x1B[2JPlayer stats:\npotion amount:",c(5),"\ncurrent health:",c(3),"\nmax health:",c(4),"\nstrength:",c(2),"\n\nenemy stats:\nhealth:",c(1),"\nstrength:",c(),("\n\nNice."if c(5)in[69,169]or c(3)in[169,69]else"")))[:-4]if c(6)in[115,108]else"\x1B[2JInvalid action.\n"if c(6)!=0 else"");a(ord((input("Do you "+(""if A[60]+A[59]==2 else"attack, ")+"potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
   if c(6)==97:print("\x1B[2JYou attack!\nYou do",c(2),"damage!");a(0 if c(1)-c(2)<1 else c(1)-c(2),1);print(f"Enemy health is now {c(1)}.");b(63);b(59 if A[60]==1 else 60,1)
   elif c(6)==112:
    if 5+c(3)>c(4):print("\x1B[2JYou restore",c(4)-c(3),"health!");a(c(4),3)
