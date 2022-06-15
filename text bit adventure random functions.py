@@ -11,7 +11,7 @@ def e():
   elif c(6)==112:
    if 5+c(3)>c(4):print("\x1B[2JYou restore",c(4)-c(3),"health!");a(c(4),3)
    else:print("\x1B[2JYou restore 5 health!");a(c(3)+5,3)
-   a(c(5)-1,5);print("You have 1 potion left!"if c(5)==1 else f"You have {c(5)} potions left!"+("\n\nNice."if c(5)in[69,169]else""));b(63);b();b(59)
+   print("You have",str(c(5)),"potion"+("s"if c(5)!=1 else""),"left!"+("\n\nNice."if c(5)in[69,169]else""));a(c(5)-1,5);b(63);b();b(59)
   else:print("\x1B[2JYou defend!");b(63,1);b();b(59)
   if c(1)>0:
    if(hash(str(A))%3,A[57],A[60])==(0,0,1):b(57,1);a(255 if c(1)+2>255 else c(1)+2,1);print("\nEnemy heals!\nEnemy gains 2 health.\nEnemy has",c(1),"health remaining!\n")
@@ -22,8 +22,7 @@ def e():
     print("You have",c(3),"health remaining!\n"+("\nNice.\n"if c(3)in[69,169]else""))
    if c(3)<1:print("SECRET ENDING\n\nOh! why hello there!\nIt's me,\nthe creator of this game!\nI just wanted to personally congratulate you on getting this ending.\nEven after getting god-like powers, you still laid down your sword and let the world return to its balance.\nYou are amazing and have shown so much dedication and patience to this game and i commend you for that!\nNo matter what they are, you can achieve your dreams!\nDon't let anything stop you!\nAnyways it's my time to go now.\nWith all that said,\ngoodbye player!"if(c(2),c(4),A[61])==(255,255,1)else"You die!");b(62,1);break
 def f():
- a(ord((input("Would you like to increase your max health or strength?\n: ")+" ").lower()[0]),1)
- while c(1)!=104 and c(1)!=109 and c(1)!=115:print("\x1B[2JInvalid option.\n");a(ord((input("Would you like to increase your max health or strength?\n: ")+" ").lower()[0]),1)
+ while c(1)!=104 and c(1)!=109 and c(1)!=115:print("\x1B[2JInvalid option.\n"if c(1)!=0 else"",end="");a(ord((input("Would you like to increase your max health or strength?\n: ")+" ").lower()[0]),1)
  if c(1)in[104,109]:a(c(4)+1,4);print("\x1B[2JMax health increased by 1!")
  else:a(c(2)+1,2);print("\x1B[2JStrength increased by 1!")
 def g():print("\nYou found",c(),"potions!\n");a(c(5)+c(),5)
