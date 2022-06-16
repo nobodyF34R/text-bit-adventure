@@ -1,4 +1,4 @@
-def a(B=1,C=0):global A;A=[int(X)for Y in[list(7*"0"+bin(B)[2:])[-8:]if i==C else A[i*8:i*8+8]for i in range(8)]for X in Y]
+def a(B=1,C=0):global A;A=[int(X)for Y in[list(7*"0"+bin(0 if B<0 else B)[2:])[-8:]if i==C else A[i*8:i*8+8]for i in range(8)]for X in Y]
 def b(C=60,D=0):global A;A=[(0 if D!=1 else 1)if i==C else A[i]for i in range(64)]
 def c(C=0):return int(''.join([str(A[i+8*C])for i in range(8)]),2)
 def d():input(f"Level {c()}! (enter to continue)")
@@ -7,7 +7,7 @@ def e():
  while c(1)>0:
   a(0,6)
   while(c(6),c(5))==(112,0)or not c(6)in[97,112,100]or(c(6),A[60]+A[59])==(97,2):print("\x1B[2JNo more potions!\n"if c(6)==112 else"\x1B[2JToo exausted.\n"if(c(6),A[60]+A[59])==(97,2)else str(print("\x1B[2JPlayer stats:\npotion amount:",c(5),"\ncurrent health:",c(3),"\nmax health:",c(4),"\nstrength:",c(2),"\n\nenemy stats:\nhealth:",c(1),"\nstrength:",c(),("\n\nNice."if c(5)in[69,169]or c(3)in[169,69]else"")))[:-4]if c(6)in[115,108]else"\x1B[2JInvalid action.\n"if c(6)!=0 else"");a(ord((input("Do you "+(""if A[60]+A[59]==2 else"attack, ")+"potion, defend or look at stats?\n: ")+" ").lower()[0]),6)
-  if c(6)==97:print("\x1B[2JYou attack!\nYou do",c(2),"damage!");a(0 if c(1)-c(2)<1 else c(1)-c(2),1);print(f"Enemy health is now {c(1)}.");b(63);b(59 if A[60]==1 else 60,1)
+  if c(6)==97:print("\x1B[2JYou attack!\nYou do",c(2),"damage!");a(c(1)-c(2),1);print(f"Enemy health is now {c(1)}.");b(63);b(59 if A[60]==1 else 60,1)
   elif c(6)==112:
    if 5+c(3)>c(4):print("\x1B[2JYou restore",c(4)-c(3),"health!");a(c(4),3)
    else:print("\x1B[2JYou restore 5 health!");a(c(3)+5,3)
@@ -17,8 +17,8 @@ def e():
    if(hash(str(A))%3,A[57],A[60])==(0,0,1):b(57,1);a(255 if c(1)+2>255 else c(1)+2,1);print("\nEnemy heals!\nEnemy gains 2 health.\nEnemy has",c(1),"health remaining!")
    else:
     b(57);print("\nEnemy attacks!")
-    if A[63]==1:print("Enemy does",int(c()/2),"damage!");a(0 if c(3)-int(c()/2)<1 else c(3)-int(c()/2),3)
-    else:print("Enemy does",c(),"damage!");a(0 if c(3)-c()<1 else c(3)-c(),3)
+    if A[63]==1:print("Enemy does",int(c()/2),"damage!");a(c(3)-int(c()/2),3)
+    else:print("Enemy does",c(),"damage!");a(c(3)-c(),3)
     print("You have",c(3),"health remaining!"+("\n\nNice."if c(3)in[69,169]else""))
    if c(3)<1:print("SECRET ENDING\n\nOh! why hello there!\nIt's me,\nthe creator of this game!\nI just wanted to personally congratulate you on getting this ending.\nEven after getting god-like powers, you still laid down your sword and let the world return to its balance.\nYou are amazing and have shown so much dedication and patience to this game and i commend you for that!\nNo matter what they are, you can achieve your dreams!\nDon't let anything stop you!\nAnyways it's my time to go now.\nWith all that said,\ngoodbye player!"if(c(2),c(4),A[61])==(255,255,1)else"You die!");b(62,1);break
 def f():
