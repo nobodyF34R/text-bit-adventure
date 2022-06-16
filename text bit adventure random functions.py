@@ -20,7 +20,7 @@ def e():
     if A[63]==1:print("Enemy does",int(c()/2),"damage!");a(c(3)-int(c()/2),3)
     else:print("Enemy does",c(),"damage!");a(c(3)-c(),3)
     print("You have",c(3),"health remaining!"+("\n\nNice."if c(3)in[69,169]else""))
-   if c(3)<1:print("SECRET ENDING\n\nOh! why hello there!\nIt's me,\nthe creator of this game!\nI just wanted to personally congratulate you on getting this ending.\nEven after getting god-like powers, you still laid down your sword and let the world return to its balance.\nYou are amazing and have shown so much dedication and patience to this game and i commend you for that!\nNo matter what they are, you can achieve your dreams!\nDon't let anything stop you!\nAnyways it's my time to go now.\nWith all that said,\ngoodbye player!"if(c(2),c(4),A[61])==(255,255,1)else"You die!");b(62,1);break
+   if c(3)<1:print("SECRET ENDING\n\nOh! why hello there!\nIt's me,\nthe creator of this game!\nI just wanted to personally congratulate you on getting this ending.\nEven after getting god-like powers, you still laid down your sword and let the world return to its balance.\nYou are amazing and have shown so much dedication and patience to this game and i commend you for that!\nNo matter what they are, you can achieve your dreams!\nDon't let anything stop you!\nAnyways it's my time to go now.\nWith all that said,\ngoodbye player!"if(c(4),A[61])==(255,1)else"You die!");b(62,1);break
 def f():
  while c(1)!=104 and c(1)!=109 and c(1)!=115:a(ord((input(("\x1B[2JInvalid option.\n\n"if c(1)!=0 else"")+"Would you like to increase your max health or strength?\n: ")+" ").lower()[0]),1)
  if c(1)in[104,109]:a(c(4)+1,4);print("\x1B[2JMax health increased by 1!")
