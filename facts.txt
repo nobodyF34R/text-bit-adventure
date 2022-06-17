@@ -1,5 +1,3 @@
-40896 bit count
-25168 is the total number of bits the text takes up
-inc cheat codes: 40896-10856=
-30340
-
+39936 bit count
+excluding text 20144
+text takes up 19792 bits
