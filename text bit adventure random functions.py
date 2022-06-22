@@ -1,6 +1,6 @@
-def a(B=1,C=0):global A;A=[int(X)for Y in[list(7*"0"+bin(0 if B<0 else B)[2:])[-8:]if i==C else A[i*8:i*8+8]for i in range(8)]for X in Y];return B
-def b(C=60,D=0):global A;A=[(0 if D!=1 else 1)if i==C else A[i]for i in range(64)]
-def c(C=0):return int(''.join([str(A[i+8*C])for i in range(8)]),2)
+def a(B=1,C=0):global A;A[C*8:C*8+8]=[0 if(B if B>0 else 0)&(1<<7-i)<1 else 1 for i in range(8)];return B
+def b(C=60,D=0):global A;A[C]=D
+def c(C=0):return int(''.join(map(str,A[C*8:C*8+8])),2)
 def d():input(f"Level {c()}! (enter to continue)")
 def e():
  a(c(4),3);b(57);b(59);b();print(f"\nEnemy health is {c(1)}.")
@@ -40,9 +40,9 @@ if c()==9:a();a(20,4);a(20,2);a(20,5)
 if c()==8:a(5);a(20,2)
 if c()==7:a();a(100,5)
 if c()==6:b(56);a(5);a(255,4);a(255,2);a(255,5);b(61,1)
-if c()==1:a(5,1);d();a(2);h();print(" small rodent!");e()
+if c()<2:a(5,1);d();a(2);h();print(" small rodent!");e()
 if(c(),A[62])==(2,0):j();print("rodent was defeated!\n");f();g();d();a(3);a(4,1);h();print("n evil ghoul!");e()
 if(c(),A[62])==(3,0):j();print("ghoul was defeated!\n");f();g();d();a(2);a(10,1);h();print("n evil lake monster!");e();a(4)
 if(c(),A[62])==(4,0):j();print("lake monster was defeated!\n");f();g();d();print("\x1B[2JYou find an XP orb!\n");a(5);a(0,1);f()
-if c()==5:input("\nBOSS (enter to continue)");h();print(" massive evil duck!");a(3);a(20,1);e()
-print("\x1B[2JGreat, now try beat it without cheats!\n"if(A[56],A[62])==(1,0)else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]==0 else"","\nhttps://bit.ly/382Jahf\n"if(c(2),c(4),c(5))==(255,255,0)else"\nhttps://bit.ly/3wcgAlt\n"if(A[61],c(5)in[169,69],c(3)in[169,69])==(1,True,True)else"","\nEND.\n")
+if c()>4:input("\nBOSS (enter to continue)");h();print(" massive evil duck!");a(3);a(20,1);e()
+print("\x1B[2JGreat, now try beat it without cheats!\n"if(A[56],A[62])==(1,0)else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]<1 else"","\nhttps://bit.ly/382Jahf\n"if(c(2),c(4),c(5))==(255,255,0)else"\nhttps://bit.ly/3wcgAlt\n"if(A[61],c(5)in[169,69],c(3)in[169,69])==(1,True,True)else"","\nEND.\n")
