@@ -20,7 +20,7 @@ def e():
     if A[63]>0:print("Enemy does",int(c()/2),"damage!");a(c(3)-int(c()/2),3)
     else:print("Enemy does",c(),"damage!");a(c(3)-c(),3)
     print("You have",c(3),"health remaining!"+("\n\nNice."if c(3)in[69,169]else""))
-   if c(3)<1:print("SECRET ENDING\n\nOh! why hello there!\nIt's me,\nthe creator of this game!\nI just wanted to personally congratulate you on getting this ending.\nEven after getting god-like powers, you still laid down your sword and let the world return to its balance.\nYou are amazing and have shown so much dedication and patience to this game and i commend you for that!\nNo matter what they are, you can achieve your dreams!\nDon't let anything stop you!\nAnyways it's my time to go now.\nWith all that said,\ngoodbye player!"if(c(4),A[61])==(255,1)else"You die!");b(62,1);break
+   if c(3)<1:print("SECRET ENDING\n\nOh! why hello there!\nIt's me,\nthe creator of this game!\nI just wanted to personally congratulate you on getting this ending.\nEven after getting god-like powers, you still laid down your sword and let the world return to its balance.\nYou are amazing and have shown so much dedication and patience to this game and i commend you for that!\nNo matter what they are, you can achieve your dreams!\nDon't let anything stop you!\nAnyways it's my time to go now.\nWith all that said,\ngoodbye player!"if(c(4),A[61])==(255,1)else"You die!");b(62);break
 def f():
  while c(1)!=104 and c(1)!=109 and c(1)!=115:a(ord((input(("\x1B[2JInvalid option.\n\n"if c(1)!=0 else"")+"Would you like to increase your max health or strength?\n: ")+" ").lower()[0]),1)
  if c(1)in[104,109]:a(c(4)+1,4);print("\x1B[2JMax health increased by 1!")
@@ -35,14 +35,14 @@ if input("\x1B[2JHint, if you want to beat the game, upgrade your health by at l
  if c()<2:input("\x1B[2JInvalid code. (enter to continue)");print("\x1B[2J")
  else:b(56,1);print("\x1B[2JCheat enabled.\n")
 else:input('\x1B[2JPsst, one code is "poti"! (enter to continue)');print("\x1B[2J")
-a(5,4);a(2,2);a(2,5)
+a(5,4);a(2,2);a(2,5);b(62,1)
 if c()>8:a();a(20,4);a(20,2);a(20,5)
 if c()>7:a(5);a(20,2)
 if c()>6:a();a(100,5)
 if c()>5:b(56);a(5);a(255,4);a(255,2);a(255,5);b(61,1)
 if c()<2:a(5,1);d();a(2);h();print(" small rodent!");e()
-if(c(),A[62])==(2,0):j();print("rodent was defeated!\n");f();g();d();a(3);a(4,1);h();print("n evil ghoul!");e()
-if(c(),A[62])==(3,0):j();print("ghoul was defeated!\n");f();g();d();a(2);a(10,1);h();print("n evil lake monster!");e();a(4)
-if(c(),A[62])==(4,0):j();print("lake monster was defeated!\n");f();g();d();print("\x1B[2JYou find an XP orb!\n");a(5);a(0,1);f()
+if c()==2 and A[62]:j();print("rodent was defeated!\n");f();g();d();a(3);a(4,1);h();print("n evil ghoul!");e()
+if c()==3 and A[62]:j();print("ghoul was defeated!\n");f();g();d();a(2);a(10,1);h();print("n evil lake monster!");e();a(4)
+if c()==4 and A[62]:j();print("lake monster was defeated!\n");f();g();d();print("\x1B[2JYou find an XP orb!\n");a(5);a(0,1);f()
 if c()>4:input("\nBOSS (enter to continue)");h();print(" massive evil duck!");a(3);a(20,1);e()
-print("\x1B[2JGreat, now try beat it without cheats!\n"if A[56]and not A[62]else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]<1 else"","\nhttps://bit.ly/382Jahf\n"if(c(2),c(4),c(5))==(255,255,0)else"\nhttps://bit.ly/3wcgAlt\n"if A[61]and c(5)in[169,69]and c(3)in[169,69]else"","\nEND.\n")
+print("\x1B[2JGreat, now try beat it without cheats!\n"if A[56]and A[62]else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]>0 else"","\nhttps://bit.ly/382Jahf\n"if(c(2),c(4),c(5))==(255,255,0)else"\nhttps://bit.ly/3wcgAlt\n"if A[61]and c(5)in[169,69]and c(3)in[169,69]else"","\nEND.\n")
