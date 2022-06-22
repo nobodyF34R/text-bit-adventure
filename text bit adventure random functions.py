@@ -14,7 +14,7 @@ def e():
    print("You have",str(a(c(5)-1,5)),"potion"+("s"if c(5)!=1 else""),"left!"+("\n\nNice."if c(5)in[69,169]else""));b(63);b();b(59)
   else:print("\x1B[2JYou defend!");b(63,1);b();b(59)
   if c(1)>0:
-   if(hash(str(A))%3,A[58],A[60])==(0,0,1):b(58,1);print("\nEnemy heals!\nEnemy gains 2 health.\nEnemy has",a(255 if c(1)+2>255 else c(1)+2,1),"health remaining!")
+   if A[60]and not hash(str(A))%3+A[58]:b(58,1);print("\nEnemy heals!\nEnemy gains 2 health.\nEnemy has",a(255 if c(1)+2>255 else c(1)+2,1),"health remaining!")
    else:
     b(58);print("\nEnemy attacks!")
     if A[63]>0:print("Enemy does",int(c()/2),"damage!");a(c(3)-int(c()/2),3)
@@ -45,4 +45,4 @@ if(c(),A[62])==(2,0):j();print("rodent was defeated!\n");f();g();d();a(3);a(4,1)
 if(c(),A[62])==(3,0):j();print("ghoul was defeated!\n");f();g();d();a(2);a(10,1);h();print("n evil lake monster!");e();a(4)
 if(c(),A[62])==(4,0):j();print("lake monster was defeated!\n");f();g();d();print("\x1B[2JYou find an XP orb!\n");a(5);a(0,1);f()
 if c()>4:input("\nBOSS (enter to continue)");h();print(" massive evil duck!");a(3);a(20,1);e()
-print("\x1B[2JGreat, now try beat it without cheats!\n"if(A[56],A[62])==(1,0)else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]<1 else"","\nhttps://bit.ly/382Jahf\n"if(c(2),c(4),c(5))==(255,255,0)else"\nhttps://bit.ly/3wcgAlt\n"if(A[61],c(5)in[169,69],c(3)in[169,69])==(1,True,True)else"","\nEND.\n")
+print("\x1B[2JGreat, now try beat it without cheats!\n"if A[56]and not A[62]else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]<1 else"","\nhttps://bit.ly/382Jahf\n"if(c(2),c(4),c(5))==(255,255,0)else"\nhttps://bit.ly/3wcgAlt\n"if A[61]and c(5)in[169,69]and c(3)in[169,69]else"","\nEND.\n")
