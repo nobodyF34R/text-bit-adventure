@@ -11,10 +11,10 @@ def e():
   elif c(6)>111:
    if 5+c(3)>c(4):print("\x1B[2JYou restore",c(4)-c(3),"health!");a(c(4),3)
    else:print("\x1B[2JYou restore 5 health!");a(c(3)+5,3)
-   print("You have",str(a(c(5)-1,5)),"potion"+("s"if c(5)!=1 else""),"left!"+("\n\nNice."if c(5)in[69,169]else""));b(63);b();b(59)
+   print("You have",a(c(5)-1,5),"potion"+("s"if c(5)!=1 else""),"left!"+("\n\nNice."if c(5)in[69,169]else""));b(63);b();b(59)
   else:print("\x1B[2JYou defend!");b(63,1);b();b(59)
   if c(1)>0:
-   if A[60]and not hash(str(A))%3+A[58]:b(58,1);print("\nEnemy heals!\nEnemy gains 2 health.\nEnemy has",a(255 if c(1)+2>255 else c(1)+2,1),"health remaining!")
+   if A[60]and not hash(str(A))%3+A[58]:b(58,1);print("\nEnemy heals!\nEnemy gains 2 health.\nEnemy has",a(c(1)+2,1),"health remaining!")
    else:
     b(58);print("\nEnemy attacks!")
     if A[63]>0:print("Enemy does",int(c()/2),"damage!");a(c(3)-int(c()/2),3)
