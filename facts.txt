@@ -1,3 +1,2 @@
-39936 bit count
-excluding text 20144
-text takes up 19792 bits
+total-min=textsize (bits)
+38656-17616=21040
