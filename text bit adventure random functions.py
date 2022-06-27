@@ -45,4 +45,4 @@ if c()==2 and A[62]:j();print("rodent was defeated!\n");f();g();d();a(3);a(4,1);
 if c()==3 and A[62]:j();print("ghoul was defeated!\n");f();g();d();a(2);a(10,1);h();print("n evil lake monster!");e();a(4)
 if c()==4 and A[62]:j();print("lake monster was defeated!\n");f();g();d();print("\x1B[2JYou find an XP orb!\n");a(5);a(0,1);f()
 if c()>4:input("\nBOSS (enter to continue)");h();print(" massive evil duck!");a(3);a(20,1);e()
-print("\x1B[2JGreat, now try beat it without cheats!\n"if A[56]and A[62]else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]>0 else"","\nhttps://bit.ly/382Jahf\n"if(c(2),c(4),c(5))==(255,255,0)else"\nhttps://bit.ly/3wcgAlt\n"if A[61]and c(5)in[169,69]and c(3)in[169,69]else"","\nEND.\n")
+print("\x1B[2JGreat, now try beat it without cheats!\n"if A[56]and A[62]else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]>0 else"","\nhttps://u.nu/jBjgR\n"if(c(2),c(4),c(5))==(255,255,0)else"\nhttps://u.nu/xmQTa\n"if A[61]and c(5)in[169,69]and c(3)in[169,69]else"","\nEND.\n")
