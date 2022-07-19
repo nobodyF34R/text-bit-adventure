@@ -1,7 +1,7 @@
 def a(B=1,C=0):global A;A[C*8:C*8+8]=[0 if(B if B>0 else 0)&(1<<7-i)<1 else 1 for i in range(8)];return B
 def b(C=60,D=0):global A;A[C]=D
 def c(C=0):return int(''.join(map(str,A[C*8:C*8+8])),2)
-def d():l(f"Level {c()}! (enter to continue)")
+def d():l(f"Level {c()}! (enter to continue)",0)
 def e():
  a(c(4),3);A[58:61]=[0]*3;k(f"\nEnemy health is {c(1)}.")
  while c(1)>0:
@@ -29,14 +29,14 @@ def g():k("\nYou found",c(),"potions!\n");a(c(5)+c(),5)
 def h():k("\x1B[2JYou encounter a",end="")
 def j():k("\x1B[2JThe ",end="")
 def k(S):print(S)
-def l(S):return input(S)
+def l(S,L=1):return input("\x1B[2J"*L+S)
 A=[0]*64;a()
-if l("\x1B[2JHint, if you want to beat the game, upgrade your health by at least 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\nDo you have a secret code?\n: ").lower()[:1]=="y":
- for i in l("\x1B[2JWhat is the code?\n: ")[:4].lower():a(ord(i),c(6));a(c(6)+1,6)
+if l("Hint, if you want to beat the game, upgrade your health by at least 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\nDo you have a secret code?\n: ").lower()[:1]=="y":
+ for i in l("What is the code?\n: ")[:4].lower():a(ord(i),c(6));a(c(6)+1,6)
  a(2 if[c(i)for i in range(4)]==[50,108,118,108]else 3 if[c(i)for i in range(4)]==[51,61,48,51]else 4 if[c(i)for i in range(3)]==[101,120,112]else 5 if[c(i)for i in range(4)]==[108,118,108,53]else 9 if[c(i)for i in range(4)]==[116,110,116,121]else 8 if[c(i)for i in range(4)]==[98,48,36,36]else 7 if[c(i)for i in range(4)]==[112,111,116,105]else 6 if[c(i)for i in range(4)]==[27,91,97,27]else 1)
- if c()<2:l("\x1B[2JInvalid code. (enter to continue)");k("\x1B[2J")
+ if c()<2:l("Invalid code. (enter to continue)");k("\x1B[2J")
  else:b(56,1);k("\x1B[2JCheat enabled.\n")
-else:l('\x1B[2JPsst, one code is "poti"! (enter to continue)');k("\x1B[2J")
+else:l('Psst, one code is "poti"! (enter to continue)');k("\x1B[2J")
 a(5,4);a(2,2);a(2,5);b(62,1)
 if c()>8:a();a(20,4);a(20,2);a(20,5)
 if c()>7:a(5);a(20,2)
@@ -46,6 +46,6 @@ if c()<2:a(5,1);d();a(2);h();k(" small rodent!");e()
 if c()==2 and A[62]:j();k("rodent was defeated!\n");f();g();d();a(3);a(4,1);h();k("n evil ghoul!");e()
 if c()==3 and A[62]:j();k("ghoul was defeated!\n");f();g();d();a(2);a(10,1);h();k("n evil lake monster!");e();a(4)
 if c()==4 and A[62]:j();k("lake monster was defeated!\n");f();g();d();k("\x1B[2JYou find an XP orb!\n");a(5);a(0,1);f()
-if c()>4:l("\nBOSS (enter to continue)");h();k(" massive evil duck!");a(3);a(20,1);e()
+if c()>4:l("\nBOSS (enter to continue)",0);h();k(" massive evil duck!");a(3);a(20,1);e()
 k("\x1B[2JGreat, now try beat it without cheats!\n"if A[56]and A[62]else"\x1B[2JThe huge evil duck was defeated and peace was restored to the land!\n"if A[62]>0 else"","\nhttps://u.nu/jBjgR\n"if(c(2),c(4),c(5))==(255,255,0)else"\nhttps://u.nu/xmQTa\n"if A[61]and c(5)in[169,69]and c(3)in[169,69]else"","\nEND.\n")
 pass
