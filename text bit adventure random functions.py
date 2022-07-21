@@ -1,4 +1,4 @@
-def a(B=1,C=0):global A;A[C*8:C*8+8]=[0 if(B if B>0 else 0)&(1<<7-i)<1 else 1 for i in range(8)];return B
+def a(B=1,C=0):global A;A[C*8:C*8+8]=[0 if(B if B>0 else 0)&(1<<7-i)<1 else 1 for i in m(8)];return B
 def b(C=60,D=0):global A;A[C]=D
 def c(C=0):return int(''.join(map(str,A[C*8:C*8+8])),2)
 def d():l(f"Level {c()}! (enter to continue)")
@@ -28,10 +28,10 @@ def f():
 def g():k("\nYou found",c(),"potions!\n");a(c(5)+c(),5)
 def h():k("\x1B[2JYou encounter a",end="")
 def j():k("\x1B[2JThe ",end="")
-k=print;l=input;A=[0]*64;a()
+k=print;l=input;m=range;A=[0]*64;a()
 if l("\x1B[2JHint, if you want to beat the game, upgrade your health by at least 2 and don't use any cheat codes!\n\nHint, you can perform any action with just its first letter!\n\n\nDo you have a secret code?\n: ").lower()[:1]=="y":
  for i in l("\x1B[2JWhat is the code?\n: ")[:4].lower():a(ord(i),c(6));a(c(6)+1,6)
- a(2 if[c(i)for i in range(4)]==[50,108,118,108]else 3 if[c(i)for i in range(4)]==[51,61,48,51]else 4 if[c(i)for i in range(3)]==[101,120,112]else 5 if[c(i)for i in range(4)]==[108,118,108,53]else 9 if[c(i)for i in range(4)]==[116,110,116,121]else 8 if[c(i)for i in range(4)]==[98,48,36,36]else 7 if[c(i)for i in range(4)]==[112,111,116,105]else 6 if[c(i)for i in range(4)]==[27,91,97,27]else 1)
+ a(2 if[c(i)for i in m(4)]==[50,108,118,108]else 3 if[c(i)for i in m(4)]==[51,61,48,51]else 4 if[c(i)for i in m(3)]==[101,120,112]else 5 if[c(i)for i in m(4)]==[108,118,108,53]else 9 if[c(i)for i in m(4)]==[116,110,116,121]else 8 if[c(i)for i in m(4)]==[98,48,36,36]else 7 if[c(i)for i in m(4)]==[112,111,116,105]else 6 if[c(i)for i in m(4)]==[27,91,97,27]else 1)
  if c()<2:l("\x1B[2JInvalid code. (enter to continue)");k("\x1B[2J")
  else:b(56,1);k("\x1B[2JCheat enabled.\n")
 else:l('\x1B[2JPsst, one code is "poti"! (enter to continue)');k("\x1B[2J")
